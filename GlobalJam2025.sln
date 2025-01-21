@@ -1,0 +1,19 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalJam2025", "GlobalJam2025.csproj", "{B27AF5C9-3E08-43EA-901D-3C0D17900EB0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+	Debug|Any CPU = Debug|Any CPU
+	ExportDebug|Any CPU = ExportDebug|Any CPU
+	ExportRelease|Any CPU = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B27AF5C9-3E08-43EA-901D-3C0D17900EB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B27AF5C9-3E08-43EA-901D-3C0D17900EB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B27AF5C9-3E08-43EA-901D-3C0D17900EB0}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{B27AF5C9-3E08-43EA-901D-3C0D17900EB0}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{B27AF5C9-3E08-43EA-901D-3C0D17900EB0}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{B27AF5C9-3E08-43EA-901D-3C0D17900EB0}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+	EndGlobalSection
+EndGlobal
