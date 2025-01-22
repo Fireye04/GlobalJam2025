@@ -3,21 +3,30 @@ using System;
 
 public partial class Player : CharacterBody2D
 {
-	public const float Speed = 300.0f;
-	public const float JumpVelocity = -400.0f;
+    [Export]
+	public float PlayerSpeed = 300.0f;
 
+    // Should be negative!
+    [Export]
+	public float JumpVelocity = -500.0f;
+
+    private float Speed;
+    
 	public override void _PhysicsProcess(double delta)
 	{
+        Speed = PlayerSpeed;
 		Vector2 velocity = Velocity;
 
 		// Add the gravity.
 		if (!IsOnFloor())
 		{
 			velocity += GetGravity() * (float)delta;
-		}
+		} else {
+
+        }
 
 		// Handle Jump.
-		if (Input.IsActionJustPressed("ui_accept") && IsOnFloor())
+		if (Input.IsActionJustPressed("jump") && IsOnFloor())
 		{
 			velocity.Y = JumpVelocity;
 		}
