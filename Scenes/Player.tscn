@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://fxl55f5oss11"]
+
+[ext_resource type="Script" path="res://Scripts/Player.cs" id="1_yw404"]
+[ext_resource type="Texture2D" uid="uid://5bonar56ymtc" path="res://Assets/icon.svg" id="2_2gx83"]
+[ext_resource type="Script" path="res://Scripts/InteractionBox.cs" id="3_hdg1i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_smogn"]
+size = Vector2(127, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3wobp"]
+size = Vector2(280, 244)
+
+[node name="Player" type="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_yw404")
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture = ExtResource("2_2gx83")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_smogn")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Interaction Box" type="Area2D" parent="."]
+script = ExtResource("3_hdg1i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction Box"]
+shape = SubResource("RectangleShape2D_3wobp")
