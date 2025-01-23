@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://d3erhekaiu5he"]
+[gd_scene load_steps=10 format=4 uid="uid://d3erhekaiu5he"]
 
 [ext_resource type="PackedScene" uid="uid://fxl55f5oss11" path="res://Scenes/Player.tscn" id="1_bjcda"]
 [ext_resource type="Texture2D" uid="uid://c6btqe44j4idy" path="res://Assets/good_tilemap.png" id="2_s0074"]
 [ext_resource type="Texture2D" uid="uid://cbv7abwc8725c" path="res://Assets/bad_tilemap.png" id="3_f3gdl"]
+[ext_resource type="Texture2D" uid="uid://5bonar56ymtc" path="res://Assets/icon.svg" id="4_y0jdf"]
+[ext_resource type="Script" path="res://Scenes/test.cs" id="5_f7clc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3we1d"]
 texture = ExtResource("2_s0074")
@@ -102,13 +104,30 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_3we1d")
 sources/2 = SubResource("TileSetAtlasSource_0kp4r")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4d87x"]
+size = Vector2(126, 128)
+
 [node name="Node2D" type="Node2D"]
 position = Vector2(556, 343)
 
 [node name="Player" parent="." instance=ExtResource("1_bjcda")]
 position = Vector2(-414, -222)
+PlayerAcceleration = 15.0
+PlayerFriction = 200.0
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(-132, -134)
 tile_map_data = PackedByteArray("AAD7/wEAAgACAAAAAAD8/wEAAgACAAAAAAD9/wEAAgACAAAAAAD+/wEAAgACAAAAAAD//wEAAgACAAAAAAD6/wEAAgABAAAAAAAAAAEAAgADAAAAAAD7/wIAAgACAAEAAAD8/wIAAgADAAUAAAD9/wIAAgADAAUAAAD//wIAAgADAAUAAAD+/wIAAgACAAEAAAAAAAIAAgADAAEAAAD6/wIAAgABAAEAAAD6/wMAAgABAAIAAAD7/wMAAgACAAIAAAD8/wMAAgACAAIAAAD9/wMAAgACAAIAAAD+/wMAAgACAAIAAAD//wMAAgACAAIAAAAAAAMAAgADAAIAAAACAP//AgACAAMAAAAAAP//AgAAAAMAAAABAP//AgABAAMAAAA=")
 tile_set = SubResource("TileSet_0nqyp")
+
+[node name="Icon" type="StaticBody2D" parent="."]
+position = Vector2(-169, -105)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("5_f7clc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Icon"]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_4d87x")
+
+[node name="Sprite2D" type="Sprite2D" parent="Icon"]
+texture = ExtResource("4_y0jdf")
