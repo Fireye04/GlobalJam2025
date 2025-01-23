@@ -168,11 +168,11 @@ position = Vector2(556, 343)
 
 [node name="Player" parent="." instance=ExtResource("1_bjcda")]
 position = Vector2(-414, -223)
-PlayerAcceleration = 15.0
-PlayerFriction = 200.0
+PlayerAcceleration = 20.0
+PlayerFriction = 215.0
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-position = Vector2(-132, -134)
+position = Vector2(-165, -131)
 tile_map_data = PackedByteArray("AAD7/wEAAgACAAAAAAD8/wEAAgACAAAAAAD9/wEAAgACAAAAAAD+/wEAAgACAAAAAAD//wEAAgACAAAAAAD6/wEAAgABAAAAAAAAAAEAAgADAAAAAAD7/wIAAgACAAEAAAD8/wIAAgADAAUAAAD9/wIAAgADAAUAAAD//wIAAgADAAUAAAD+/wIAAgACAAEAAAAAAAIAAgADAAEAAAD6/wIAAgABAAEAAAD6/wMAAgABAAIAAAD7/wMAAgACAAIAAAD8/wMAAgACAAIAAAD9/wMAAgACAAIAAAD+/wMAAgACAAIAAAD//wMAAgACAAIAAAAAAAMAAgADAAIAAAACAP//AgACAAMAAAAAAP//AgAAAAMAAAABAP//AgABAAMAAAA=")
 tile_set = SubResource("TileSet_0nqyp")
 
