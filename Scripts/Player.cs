@@ -4,6 +4,9 @@ using System;
 public partial class Player : CharacterBody2D
 {
     [Export]
+    public InteractionBox box;
+
+    [Export]
 	public float PlayerSpeed = 300.0f;
 
     // Should be negative!
@@ -50,4 +53,24 @@ public partial class Player : CharacterBody2D
 		Velocity = velocity;
 		MoveAndSlide();
 	}
+
+    public override void _Process(double delta) {
+        if (Input.IsActionJustPressed("interact")) {
+            Node2D target = box.find_nearest_interactable();
+
+            if (target != null) {
+
+                IInteractable iTarget = (IInteractable)target;
+                if (iTarget.canInteract()) {
+
+                    iTarget.interact();
+                    return;
+                }
+            } else {
+                GD.Print("None in Range");
+            }
+        }
+
+    }
+
 }
