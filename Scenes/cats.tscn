@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://dlmbnna5shi77"]
+[gd_scene load_steps=13 format=3 uid="uid://dlmbnna5shi77"]
 
 [ext_resource type="Script" path="res://Scripts/Cats.cs" id="1_5oev0"]
+[ext_resource type="Resource" uid="uid://c700obq84e26b" path="res://Resources/Cats.dialogue" id="2_ehac4"]
 [ext_resource type="Texture2D" uid="uid://dessri7gi670k" path="res://Assets/NPCs1.png" id="2_j2f37"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vcv8f"]
@@ -116,6 +117,8 @@ state = 2
 spriteAnim1 = NodePath("Cat hitbox/Cat2")
 spriteAnim2 = NodePath("Cat hitbox/Cat1")
 anim = NodePath("AnimationPlayer")
+dialogue = ExtResource("2_ehac4")
+startNode = "start"
 
 [node name="Cat hitbox" type="CollisionShape2D" parent="."]
 position = Vector2(-9, -141.5)
