@@ -1,21 +1,13 @@
-[gd_scene load_steps=6 format=4 uid="uid://d3erhekaiu5he"]
+[gd_scene load_steps=3 format=4 uid="uid://btvb1420t2yra"]
 
 [ext_resource type="PackedScene" uid="uid://fxl55f5oss11" path="res://Scenes/Player.tscn" id="1_bjcda"]
-[ext_resource type="TileSet" uid="uid://bk7xjs41h0cwu" path="res://Scenes/main.tres" id="2_ik5p5"]
-[ext_resource type="Texture2D" uid="uid://5bonar56ymtc" path="res://Assets/icon.svg" id="4_y0jdf"]
-[ext_resource type="Script" path="res://Scenes/test.cs" id="5_f7clc"]
+[ext_resource type="TileSet" uid="uid://bk7xjs41h0cwu" path="res://Assets/main.tres" id="2_woisn"]
 
-
-[node name="main" type="Node2D"]
-position = Vector2(556, 343)
+[node name="Main" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_bjcda")]
-position = Vector2(-414, -223)
+position = Vector2(167, 101)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-position = Vector2(-165, -131)
-tile_map_data = PackedByteArray("AAD7/wEAAgACAAAAAAD8/wEAAgACAAAAAAD9/wEAAgACAAAAAAD+/wEAAgACAAAAAAD//wEAAgACAAAAAAD6/wEAAgABAAAAAAAAAAEAAgADAAAAAAD7/wIAAgACAAEAAAD8/wIAAgADAAUAAAD9/wIAAgADAAUAAAD//wIAAgADAAUAAAD+/wIAAgACAAEAAAAAAAIAAgADAAEAAAD6/wIAAgABAAEAAAD6/wMAAgABAAIAAAD7/wMAAgACAAIAAAD8/wMAAgACAAIAAAD9/wMAAgACAAIAAAD+/wMAAgACAAIAAAD//wMAAgACAAIAAAAAAAMAAgADAAIAAAACAP//AgACAAMAAAAAAP//AgAAAAMAAAABAP//AgABAAMAAAA=")
-tile_set = ExtResource("2_ik5p5")
-
-[node name="Dog" parent="." instance=ExtResource("7_mecqj")]
-position = Vector2(-17, -217)
+tile_map_data = PackedByteArray("AAABAAMAAQABAAMAAAACAAMAAQABAAMAAAADAAMAAQABAAMAAAAEAAMAAQABAAMAAAAAAAMAAQAAAAMAAAAFAAMAAQACAAMAAAA=")
+tile_set = ExtResource("2_woisn")

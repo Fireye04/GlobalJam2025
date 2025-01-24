@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=4 uid="uid://bxo7eixp7a1mt"]
 
-[ext_resource type="TileSet" uid="uid://bk7xjs41h0cwu" path="res://Scenes/main.tres" id="1_sg53x"]
+[ext_resource type="TileSet" uid="uid://bk7xjs41h0cwu" path="res://Assets/main.tres" id="1_sg53x"]
 [ext_resource type="PackedScene" uid="uid://fxl55f5oss11" path="res://Scenes/Player.tscn" id="2_7b8p0"]
 
 [node name="Node2D" type="Node2D"]
