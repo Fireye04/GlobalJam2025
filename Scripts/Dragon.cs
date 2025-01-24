@@ -4,7 +4,10 @@ using System;
 public partial class Dragon : StaticBody2D, IInteractable
 {
     [Export] 
-    public AnimatedSprite2D anim;
+    public AnimatedSprite2D spriteAnim;
+
+    [Export] 
+    public AnimationPlayer anim;
 
     [Export]
     public Resource dialogue;
@@ -16,14 +19,19 @@ public partial class Dragon : StaticBody2D, IInteractable
     public bool Can_interact = true;
 
     public override void _Ready () {
-        anim.Play("default");
+        spriteAnim.Play("default");
     }
 
     public void interact() {
         GD.Print("fuck");
+        anim.Play("fade_out");
     }
 
     public bool canInteract() {
         return Can_interact;
+    }
+
+    public void Despawn() {
+        QueueFree();
     }
 }
