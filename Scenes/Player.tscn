@@ -414,7 +414,7 @@ box = NodePath("Interaction Box")
 position = Vector2(0, -24)
 sprite_frames = SubResource("SpriteFrames_u0nbb")
 animation = &"move_right_weird"
-frame_progress = 0.60958
+frame_progress = 0.133375
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 2.5)

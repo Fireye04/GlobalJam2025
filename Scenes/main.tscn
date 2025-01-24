@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://5kxd5yrx65tp" path="res://Assets/good_decor.png" id="4_y71lo"]
 [ext_resource type="Texture2D" uid="uid://cubo1nj0csmtr" path="res://Assets/bad_decor.png" id="5_78kku"]
 [ext_resource type="Texture2D" uid="uid://pei12fnq4t5w" path="res://Assets/weird_tilemap.png" id="6_qle6w"]
-[ext_resource type="PackedScene" uid="uid://blokf8trslvj7" path="res://Scenes/dragon.tscn" id="9_or14e"]
+[ext_resource type="PackedScene" uid="uid://2f6uwsmmad2i" path="res://Scenes/dog.tscn" id="7_mecqj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3we1d"]
 texture = ExtResource("2_s0074")
@@ -172,5 +172,5 @@ position = Vector2(-165, -131)
 tile_map_data = PackedByteArray("AAD7/wEAAgACAAAAAAD8/wEAAgACAAAAAAD9/wEAAgACAAAAAAD+/wEAAgACAAAAAAD//wEAAgACAAAAAAD6/wEAAgABAAAAAAAAAAEAAgADAAAAAAD7/wIAAgACAAEAAAD8/wIAAgADAAUAAAD9/wIAAgADAAUAAAD//wIAAgADAAUAAAD+/wIAAgACAAEAAAAAAAIAAgADAAEAAAD6/wIAAgABAAEAAAD6/wMAAgABAAIAAAD7/wMAAgACAAIAAAD8/wMAAgACAAIAAAD9/wMAAgACAAIAAAD+/wMAAgACAAIAAAD//wMAAgACAAIAAAAAAAMAAgADAAIAAAACAP//AgACAAMAAAAAAP//AgAAAAMAAAABAP//AgABAAMAAAA=")
 tile_set = SubResource("TileSet_0nqyp")
 
-[node name="Dragon" parent="." instance=ExtResource("9_or14e")]
-position = Vector2(-20, -213)
+[node name="Dog" parent="." instance=ExtResource("7_mecqj")]
+position = Vector2(-17, -217)

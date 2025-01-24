@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Dragon: StaticBody2D, IInteractable
+public partial class Chimera: StaticBody2D, IInteractable
 {
     [Export] 
     public AnimatedSprite2D spriteAnim;
@@ -23,7 +23,7 @@ public partial class Dragon: StaticBody2D, IInteractable
     }
 
     public void interact() {
-        GD.Print("fuck");
+        GD.Print("UWU");
         anim.Play("fade_out");
     }
 

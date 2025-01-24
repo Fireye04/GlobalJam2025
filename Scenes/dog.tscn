@@ -1,32 +1,47 @@
-[gd_scene load_steps=10 format=3 uid="uid://blokf8trslvj7"]
+[gd_scene load_steps=10 format=3 uid="uid://2f6uwsmmad2i"]
 
-[ext_resource type="Script" path="res://Scripts/Dragon.cs" id="1_6gjbh"]
-[ext_resource type="Texture2D" uid="uid://dessri7gi670k" path="res://Assets/NPCs1.png" id="2_enjhw"]
+[ext_resource type="Script" path="res://Scripts/Dog.cs" id="1_d1iud"]
+[ext_resource type="Texture2D" uid="uid://dsqlx3a5hq73m" path="res://Assets/NPCs2.png" id="2_sru1p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vcv8f"]
-size = Vector2(220, 294)
+size = Vector2(202, 324)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6qgj8"]
-atlas = ExtResource("2_enjhw")
-region = Rect2(0, 0, 256, 191)
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ht04"]
+atlas = ExtResource("2_sru1p")
+region = Rect2(0, 191, 256, 191)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_08dro"]
-atlas = ExtResource("2_enjhw")
-region = Rect2(256, 0, 256, 191)
+[sub_resource type="AtlasTexture" id="AtlasTexture_e8bqs"]
+atlas = ExtResource("2_sru1p")
+region = Rect2(256, 191, 256, 191)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pu7ab"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6qgj8")
+"texture": SubResource("AtlasTexture_8ht04")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_08dro")
+"texture": SubResource("AtlasTexture_e8bqs")
 }],
 "loop": true,
 "name": &"default",
 "speed": 1.0
 }]
+
+[sub_resource type="Animation" id="Animation_8n8nk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_1q0qv"]
 resource_name = "fade_out"
@@ -57,40 +72,25 @@ tracks/1/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_8n8nk"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ncmou"]
 _data = {
 "RESET": SubResource("Animation_8n8nk"),
 "fade_out": SubResource("Animation_1q0qv")
 }
 
-[node name="Dragon" type="StaticBody2D" node_paths=PackedStringArray("spriteAnim", "anim")]
-script = ExtResource("1_6gjbh")
+[node name="Dog" type="StaticBody2D" node_paths=PackedStringArray("spriteAnim", "anim")]
+script = ExtResource("1_d1iud")
 spriteAnim = NodePath("CollisionShape2D/AnimatedSprite2D")
 anim = NodePath("AnimationPlayer")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-4, -116)
+position = Vector2(-16, -127)
 shape = SubResource("RectangleShape2D_vcv8f")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
-position = Vector2(4, 116)
+position = Vector2(16, 127)
 sprite_frames = SubResource("SpriteFrames_pu7ab")
-frame_progress = 0.882821
+frame_progress = 0.290867
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
