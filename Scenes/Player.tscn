@@ -403,7 +403,7 @@ animations = [{
 size = Vector2(60, 75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3wobp"]
-size = Vector2(180, 130)
+size = Vector2(199, 194)
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("anim", "box")]
 script = ExtResource("1_yw404")
@@ -414,7 +414,7 @@ box = NodePath("Interaction Box")
 position = Vector2(0, -24)
 sprite_frames = SubResource("SpriteFrames_u0nbb")
 animation = &"move_right_weird"
-frame_progress = 0.917087
+frame_progress = 0.133375
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 2.5)
@@ -426,6 +426,7 @@ shape = SubResource("RectangleShape2D_smogn")
 script = ExtResource("3_hdg1i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction Box"]
+position = Vector2(0, -33)
 shape = SubResource("RectangleShape2D_3wobp")
 
 [connection signal="body_entered" from="Interaction Box" to="Interaction Box" method="_on_body_entered"]

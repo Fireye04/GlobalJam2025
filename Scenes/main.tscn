@@ -5,10 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://5bonar56ymtc" path="res://Assets/icon.svg" id="4_y0jdf"]
 [ext_resource type="Script" path="res://Scenes/test.cs" id="5_f7clc"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4d87x"]
-size = Vector2(126, 128)
 
-[node name="Node2D" type="Node2D"]
+[node name="main" type="Node2D"]
 position = Vector2(556, 343)
 
 [node name="Player" parent="." instance=ExtResource("1_bjcda")]
@@ -19,14 +17,5 @@ position = Vector2(-165, -131)
 tile_map_data = PackedByteArray("AAD7/wEAAgACAAAAAAD8/wEAAgACAAAAAAD9/wEAAgACAAAAAAD+/wEAAgACAAAAAAD//wEAAgACAAAAAAD6/wEAAgABAAAAAAAAAAEAAgADAAAAAAD7/wIAAgACAAEAAAD8/wIAAgADAAUAAAD9/wIAAgADAAUAAAD//wIAAgADAAUAAAD+/wIAAgACAAEAAAAAAAIAAgADAAEAAAD6/wIAAgABAAEAAAD6/wMAAgABAAIAAAD7/wMAAgACAAIAAAD8/wMAAgACAAIAAAD9/wMAAgACAAIAAAD+/wMAAgACAAIAAAD//wMAAgACAAIAAAAAAAMAAgADAAIAAAACAP//AgACAAMAAAAAAP//AgAAAAMAAAABAP//AgABAAMAAAA=")
 tile_set = ExtResource("2_ik5p5")
 
-[node name="Icon" type="StaticBody2D" parent="."]
-position = Vector2(-169, -105)
-scale = Vector2(0.5, 0.5)
-script = ExtResource("5_f7clc")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Icon"]
-position = Vector2(1, 0)
-shape = SubResource("RectangleShape2D_4d87x")
-
-[node name="Sprite2D" type="Sprite2D" parent="Icon"]
-texture = ExtResource("4_y0jdf")
+[node name="Dog" parent="." instance=ExtResource("7_mecqj")]
+position = Vector2(-17, -217)
