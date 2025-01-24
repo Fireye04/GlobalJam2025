@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://blokf8trslvj7"]
+
+[ext_resource type="Script" path="res://Scripts/Dragon.cs" id="1_6gjbh"]
+[ext_resource type="Texture2D" uid="uid://dessri7gi670k" path="res://Assets/NPCs1.png" id="2_enjhw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6qgj8"]
+atlas = ExtResource("2_enjhw")
+region = Rect2(0, 0, 256, 191)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08dro"]
+atlas = ExtResource("2_enjhw")
+region = Rect2(256, 0, 256, 191)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pu7ab"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6qgj8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_08dro")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vcv8f"]
+size = Vector2(220, 257)
+
+[node name="Dragon" type="StaticBody2D" node_paths=PackedStringArray("anim")]
+script = ExtResource("1_6gjbh")
+anim = NodePath("AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pu7ab")
+frame_progress = 0.882821
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, -97.5)
+shape = SubResource("RectangleShape2D_vcv8f")

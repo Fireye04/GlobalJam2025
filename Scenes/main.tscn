@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://d3erhekaiu5he"]
+[gd_scene load_steps=17 format=4 uid="uid://d3erhekaiu5he"]
 
 [ext_resource type="PackedScene" uid="uid://fxl55f5oss11" path="res://Scenes/Player.tscn" id="1_bjcda"]
 [ext_resource type="Texture2D" uid="uid://c6btqe44j4idy" path="res://Assets/good_tilemap.png" id="2_s0074"]
@@ -6,8 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://5bonar56ymtc" path="res://Assets/icon.svg" id="4_y0jdf"]
 [ext_resource type="Texture2D" uid="uid://5kxd5yrx65tp" path="res://Assets/good_decor.png" id="4_y71lo"]
 [ext_resource type="Texture2D" uid="uid://cubo1nj0csmtr" path="res://Assets/bad_decor.png" id="5_78kku"]
-[ext_resource type="Script" path="res://Scenes/test.cs" id="5_f7clc"]
+[ext_resource type="Script" path="res://Scripts/test.cs" id="5_f7clc"]
 [ext_resource type="Texture2D" uid="uid://pei12fnq4t5w" path="res://Assets/weird_tilemap.png" id="6_qle6w"]
+[ext_resource type="PackedScene" uid="uid://blokf8trslvj7" path="res://Scenes/dragon.tscn" id="9_or14e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3we1d"]
 texture = ExtResource("2_s0074")
@@ -187,3 +188,6 @@ shape = SubResource("RectangleShape2D_4d87x")
 
 [node name="Sprite2D" type="Sprite2D" parent="Icon"]
 texture = ExtResource("4_y0jdf")
+
+[node name="Dragon" parent="." instance=ExtResource("9_or14e")]
+position = Vector2(-20, -213)
