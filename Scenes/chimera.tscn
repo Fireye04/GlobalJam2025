@@ -1,0 +1,97 @@
+[gd_scene load_steps=10 format=3 uid="uid://ccrcpdcl4r8yg"]
+
+[ext_resource type="Script" path="res://Scripts/Chimera.cs" id="1_6kuvv"]
+[ext_resource type="Texture2D" uid="uid://dsqlx3a5hq73m" path="res://Assets/NPCs2.png" id="2_afe25"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_20cav"]
+atlas = ExtResource("2_afe25")
+region = Rect2(0, 0, 191, 191)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8615s"]
+atlas = ExtResource("2_afe25")
+region = Rect2(191, 0, 191, 191)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pu7ab"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_20cav")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8615s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vcv8f"]
+size = Vector2(116, 323)
+
+[sub_resource type="Animation" id="Animation_8n8nk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_1q0qv"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 2),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ncmou"]
+_data = {
+"RESET": SubResource("Animation_8n8nk"),
+"fade_out": SubResource("Animation_1q0qv")
+}
+
+[node name="Chimera" type="StaticBody2D" node_paths=PackedStringArray("spriteAnim", "anim")]
+script = ExtResource("1_6kuvv")
+spriteAnim = NodePath("AnimatedSprite2D")
+anim = NodePath("AnimationPlayer")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pu7ab")
+frame_progress = 0.684577
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7, -126)
+shape = SubResource("RectangleShape2D_vcv8f")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ncmou")
+}
