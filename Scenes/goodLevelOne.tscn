@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=4 uid="uid://bgmkb7ifje4wf"]
 
-[ext_resource type="TileSet" uid="uid://bk7xjs41h0cwu" path="res://Assets/main.tres" id="1_oi0dd"]
-[ext_resource type="PackedScene" path="res://Scenes/DialogueTrigger.tscn" id="1_wiqey"]
+[ext_resource type="TileSet" uid="uid://ce1xw27p2jfew" path="res://Scenes/main.tres" id="1_oi0dd"]
+[ext_resource type="PackedScene" uid="uid://xtvfn68djaee" path="res://Scenes/DialogueTrigger.tscn" id="1_wiqey"]
 [ext_resource type="PackedScene" uid="uid://fxl55f5oss11" path="res://Scenes/Player.tscn" id="2_seujl"]
 
 [node name="Node2D" type="Node2D"]
