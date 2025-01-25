@@ -24,7 +24,7 @@ public partial class Chimera: StaticBody2D, IInteractable
     }
 
     public void interact() {
-		/*DialogueManager.ShowExampleDialogueBalloon(test, "start");*/
+		DialogueManager.ShowExampleDialogueBalloon(dialogue, "start");
         anim.Play("fade_out");
     }
 
