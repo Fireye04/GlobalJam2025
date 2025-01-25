@@ -10,6 +10,9 @@ public partial class Player : CharacterBody2D
 	}
 
 	[Export]
+	public Control prompt;
+
+	[Export]
 	public LevelType Variant = LevelType.Good;
 
 	[Export]
@@ -122,6 +125,14 @@ public partial class Player : CharacterBody2D
 			lr = "_right";
 		}
 		return anim + lr + vr;
+	}
+
+	public void in_range (){
+		prompt.Visible = true;
+	}
+
+		public void out_of_range (){
+		prompt.Visible = false;
 	}
 
 }

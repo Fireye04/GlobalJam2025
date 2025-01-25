@@ -429,5 +429,6 @@ script = ExtResource("3_hdg1i")
 position = Vector2(0, -33)
 shape = SubResource("RectangleShape2D_3wobp")
 
+[connection signal="body_entered" from="Interaction Box" to="." method="_on_interaction_box_body_entered"]
 [connection signal="body_entered" from="Interaction Box" to="Interaction Box" method="_on_body_entered"]
 [connection signal="body_exited" from="Interaction Box" to="Interaction Box" method="_on_body_exited"]
