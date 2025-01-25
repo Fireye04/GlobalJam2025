@@ -42,6 +42,11 @@ public partial class Player : CharacterBody2D
 	
 	private bool pointingRight = true;
 	
+	int DPS = 7;
+	
+	[Export]
+	public TileSet mainjjjj;
+	
 	public override void _PhysicsProcess(double delta)
 	{
 		Speed = PlayerSpeed;
