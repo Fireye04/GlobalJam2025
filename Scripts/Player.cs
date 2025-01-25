@@ -42,6 +42,9 @@ public partial class Player : CharacterBody2D
 	[Export]
 	public float BubbleStrength;
 
+	[Export]
+	public int DPS;
+
 	private float Speed;
 
 	private float acceleration;
@@ -95,7 +98,7 @@ public partial class Player : CharacterBody2D
 		Speed = PlayerSpeed;
 		acceleration = PlayerAcceleration;
 		friction = PlayerFriction;
-        Vector2 velocity = Velocity;
+		Vector2 velocity = Velocity;
 
 		// Add the gravity.
 		if (!IsOnFloor())
@@ -164,4 +167,7 @@ public partial class Player : CharacterBody2D
 		prompt.Visible = false;
 	}
 
+	private void _on_area_2d_area_entered(Node2D body) {
+		GD.Print(body.Name);
+	}
 }
