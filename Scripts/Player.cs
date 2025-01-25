@@ -16,10 +16,10 @@ public partial class Player : CharacterBody2D
 	[Export]
 	public InteractionBox box;
 
-    [Export]
-    public Node2D respawnLocation;
+	[Export]
+	public Node2D respawnLocation;
 
-    private Node2D currentNpc;
+	private Node2D currentNpc;
 
 	// Differentiating exported values from used ones! 
 	// Why? if I want to change a variable mid-run I want 
