@@ -13,7 +13,6 @@
 position = Vector2(67, 117)
 respawnLocation = NodePath("../Node2D")
 JumpVelocity = -400.0
-DPS = 5
 
 [node name="DialogueTrigger" parent="." instance=ExtResource("1_wiqey")]
 position = Vector2(-105, 156)
