@@ -20,6 +20,7 @@ size_flags_vertical = 4
 script = ExtResource("1_p3ljf")
 
 [node name="MenuTab" type="MarginContainer" parent="."]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("2_35n1r")
@@ -45,6 +46,7 @@ text = "Quit"
 
 [node name="MenuTab2" type="MarginContainer" parent="."]
 visible = false
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("2_35n1r")
