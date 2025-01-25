@@ -3,7 +3,7 @@
 [ext_resource type="TileSet" uid="uid://ce1xw27p2jfew" path="res://Scenes/main.tres" id="1_oi0dd"]
 [ext_resource type="PackedScene" uid="uid://xtvfn68djaee" path="res://Scenes/DialogueTrigger.tscn" id="1_wiqey"]
 [ext_resource type="PackedScene" uid="uid://fxl55f5oss11" path="res://Scenes/Player.tscn" id="2_seujl"]
-[ext_resource type="PackedScene" uid="uid://du5h3382ykasr" path="res://Scenes/bubbles.tscn" id="4_x4a3t"]
+[ext_resource type="PackedScene" path="res://Scenes/bubbles.tscn" id="4_x4a3t"]
 
 [node name="Node2D" type="Node2D"]
 
