@@ -30,6 +30,7 @@ public partial class DialogueTrigger : Node2D
 			DialogueManager.ShowExampleDialogueBalloon(test, "start");
 			Player pbody = (Player) body;
 			pbody.inputDirection = new Vector2();
+
 			hasTriggered = true;
 		}
 

@@ -93,7 +93,7 @@ public partial class Player : CharacterBody2D
 		Speed = PlayerSpeed;
 		acceleration = PlayerAcceleration;
 		friction = PlayerFriction;
-		Vector2 velocity = Velocity;
+        Vector2 velocity = Velocity;
 
 		// Add the gravity.
 		if (!IsOnFloor())

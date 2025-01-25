@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=4 uid="uid://bgmkb7ifje4wf"]
+[gd_scene load_steps=4 format=4 uid="uid://bgmkb7ifje4wf"]
 
 [ext_resource type="TileSet" uid="uid://ce1xw27p2jfew" path="res://Scenes/main.tres" id="1_oi0dd"]
 [ext_resource type="PackedScene" uid="uid://xtvfn68djaee" path="res://Scenes/DialogueTrigger.tscn" id="1_wiqey"]
@@ -21,3 +21,4 @@ metadata/dps = 11
 
 [node name="bubbles" parent="." instance=ExtResource("4_x4a3t")]
 position = Vector2(1172, 98)
+
