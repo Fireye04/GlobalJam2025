@@ -16,10 +16,10 @@ public partial class Player : CharacterBody2D
 	[Export]
 	public InteractionBox box;
 
-    [Export]
-    public Node2D respawnLocation;
+	[Export]
+	public Node2D respawnLocation;
 
-    private Node2D currentNpc;
+	private Node2D currentNpc;
 
 	// Differentiating exported values from used ones! 
 	// Why? if I want to change a variable mid-run I want 
@@ -165,10 +165,10 @@ public partial class Player : CharacterBody2D
 		prompt.Visible = false;
 	}
 
-    
-    private void _on_area_2d_body_shape_entered(Rid body_rid, Node2D body, int body_shape_index, int local_shape_index) {
-        if (body is TileMapLayer){
-            this.Transform = respawnLocation.Transform;
-        }
-    }
+	
+	private void _on_area_2d_body_shape_entered(Rid body_rid, Node2D body, int body_shape_index, int local_shape_index) {
+		if (body is TileMapLayer){
+			this.Transform = respawnLocation.Transform;
+		}
+	}
 }
