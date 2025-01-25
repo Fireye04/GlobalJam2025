@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Menu.cs" id="1_p3ljf"]
 [ext_resource type="Script" path="res://MenuTab.cs" id="2_35n1r"]
 [ext_resource type="Script" path="res://MenuSwapperButton.cs" id="3_3dy0e"]
-[ext_resource type="Script" path="res://Scenes/LoadSceneButton.cs" id="3_ikf7q"]
+[ext_resource type="Script" path="res://Scripts/LoadSceneButton.cs" id="3_ikf7q"]
 [ext_resource type="PackedScene" uid="uid://d3erhekaiu5he" path="res://Scenes/main.tscn" id="4_7qfyq"]
 
 [node name="Menu" type="Control"]
