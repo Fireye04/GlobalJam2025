@@ -21,6 +21,8 @@ public partial class Player : CharacterBody2D
 	[Export]
 	public InteractionBox box;
 
+    private Node2D currentNpc;
+
 	// Differentiating exported values from used ones! 
 	// Why? if I want to change a variable mid-run I want 
 	// to have access to the original value to reset!
@@ -158,7 +160,7 @@ public partial class Player : CharacterBody2D
 		prompt.Visible = true;
 	}
 
-		public void out_of_range (){
+	public void out_of_range (){
 		prompt.Visible = false;
 	}
 
