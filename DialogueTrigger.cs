@@ -8,8 +8,6 @@ public partial class DialogueTrigger : Node2D
 	public Resource test;
 	[Export]
 	public bool startWithScene = false;
-	[Export]
-	public PackedScene player;
 
 	private bool hasTriggered = false;
 
@@ -28,8 +26,10 @@ public partial class DialogueTrigger : Node2D
 	}
 
 	private void _on_area_2d_body_entered(Node2D body) {
-		if(body.Name == "Player" && !startWithScene && !hasTriggered){
+		if(body is Player && !startWithScene && !hasTriggered){
 			DialogueManager.ShowExampleDialogueBalloon(test, "start");
+            Player pbody = (Player) body;
+            pbody.inputDirection = new Vector2();
 			hasTriggered = true;
 		}
 
