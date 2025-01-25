@@ -113,7 +113,6 @@ _data = {
 
 [node name="Cats" type="StaticBody2D" node_paths=PackedStringArray("spriteAnim1", "spriteAnim2", "anim")]
 script = ExtResource("1_5oev0")
-state = 2
 spriteAnim1 = NodePath("Cat hitbox/Cat2")
 spriteAnim2 = NodePath("Cat hitbox/Cat1")
 anim = NodePath("AnimationPlayer")

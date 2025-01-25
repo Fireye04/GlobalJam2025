@@ -4,6 +4,9 @@
 [ext_resource type="Resource" uid="uid://b3okgldul35bi" path="res://Resources/Chimera.dialogue" id="2_03pi5"]
 [ext_resource type="Texture2D" uid="uid://dsqlx3a5hq73m" path="res://Assets/NPCs2.png" id="2_afe25"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vcv8f"]
+size = Vector2(116, 323)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_20cav"]
 atlas = ExtResource("2_afe25")
 region = Rect2(0, 0, 191, 191)
@@ -25,9 +28,6 @@ animations = [{
 "name": &"default",
 "speed": 1.0
 }]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vcv8f"]
-size = Vector2(116, 323)
 
 [sub_resource type="Animation" id="Animation_8n8nk"]
 length = 0.001
@@ -81,18 +81,19 @@ _data = {
 
 [node name="Chimera" type="StaticBody2D" node_paths=PackedStringArray("spriteAnim", "anim")]
 script = ExtResource("1_6kuvv")
-spriteAnim = NodePath("AnimatedSprite2D")
+spriteAnim = NodePath("CollisionShape2D/AnimatedSprite2D")
 anim = NodePath("AnimationPlayer")
 dialogue = ExtResource("2_03pi5")
 startNode = "start"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_pu7ab")
-frame_progress = 0.684577
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-7, -126)
 shape = SubResource("RectangleShape2D_vcv8f")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
+position = Vector2(7, 126)
+sprite_frames = SubResource("SpriteFrames_pu7ab")
+frame_progress = 0.684577
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
