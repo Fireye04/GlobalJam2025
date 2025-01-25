@@ -3,23 +3,21 @@ using System;
 
 public partial class Player : CharacterBody2D
 {
-	public enum LevelType {
-		Good,
-		Bad,
-		Weird
-	}
 
 	[Export]
 	public Control prompt;
 
 	[Export]
-	public LevelType Variant = LevelType.Good;
+	public ELevelType Variant = ELevelType.Good;
 
 	[Export]
 	public AnimatedSprite2D anim;
 
 	[Export]
 	public InteractionBox box;
+
+    [Export]
+    public Node2D respawnLocation;
 
     private Node2D currentNpc;
 
@@ -40,7 +38,7 @@ public partial class Player : CharacterBody2D
 	public float JumpVelocity = -500.0f;
 
 	[Export]
-	public float BubbleStrength;
+	public float BubbleStrength = -1500f;
 
 	[Export]
 	public int DPS;
@@ -116,7 +114,7 @@ public partial class Player : CharacterBody2D
 
 		// Handle bubble velocity
 		if(bubblesJump) {
-			velocity.Y += -1500 * (float)delta;
+			velocity.Y += BubbleStrength * (float)delta;
 		}
 
 		// Get the input direction and handle the movement/deceleration.
@@ -148,9 +146,9 @@ public partial class Player : CharacterBody2D
 		String vr = "_good";
 		String lr = "_left";
 
-		if (Variant == LevelType.Bad) {
+		if (Variant == ELevelType.Bad) {
 			vr = "_bad";
-		} else if (Variant == LevelType.Weird) {
+		} else if (Variant == ELevelType.Weird) {
 			vr = "_weird";
 		}
 		if (pointingRight) {
@@ -167,7 +165,10 @@ public partial class Player : CharacterBody2D
 		prompt.Visible = false;
 	}
 
-	private void _on_area_2d_area_entered(Node2D body) {
-		GD.Print(body.Name);
-	}
+    
+    private void _on_area_2d_body_shape_entered(Rid body_rid, Node2D body, int body_shape_index, int local_shape_index) {
+        if (body is TileMapLayer){
+            this.Transform = respawnLocation.Transform;
+        }
+    }
 }

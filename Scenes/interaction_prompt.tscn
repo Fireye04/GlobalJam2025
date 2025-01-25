@@ -1,24 +1,23 @@
-[gd_scene format=3 uid="uid://bwov3n1gx68wi"]
+[gd_scene load_steps=2 format=3 uid="uid://bwov3n1gx68wi"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_22db8"]
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
 
 [node name="InteractionPrompt" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+size_flags_horizontal = 0
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
 offset_left = -70.0
-offset_top = -11.5
-offset_right = 70.0
-offset_bottom = 11.5
+offset_top = -1.0
+offset_right = 71.0
+offset_bottom = 22.0
 grow_horizontal = 2
-grow_vertical = 2
-text = "Press F to Interact"
+text = "Press E to Interact"
+label_settings = SubResource("LabelSettings_22db8")
