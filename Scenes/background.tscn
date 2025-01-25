@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://343s1w3o1xf5"]
+
+[ext_resource type="Texture2D" uid="uid://dg1xrqvxtckf2" path="res://Assets/bad_bg.png" id="1_dafna"]
+[ext_resource type="Script" path="res://Scenes/Background.cs" id="1_yf4i6"]
+[ext_resource type="Texture2D" uid="uid://2qprnxj7dd3u" path="res://Assets/good_bg.png" id="2_uhyoq"]
+[ext_resource type="Texture2D" uid="uid://3qxkh3gje7vn" path="res://Assets/weird_bg.png" id="4_0ufna"]
+
+[node name="background" type="CanvasLayer" node_paths=PackedStringArray("tr")]
+layer = -1
+script = ExtResource("1_yf4i6")
+good = ExtResource("2_uhyoq")
+bad = ExtResource("1_dafna")
+weird = ExtResource("4_0ufna")
+tr = NodePath("TextureRect")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_dafna")
+expand_mode = 3

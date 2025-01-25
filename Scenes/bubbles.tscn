@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://du5h3382ykasr"]
 
-[ext_resource type="Script" path="res://Bubbles.cs" id="1_enrwp"]
+[ext_resource type="Script" path="res://Scripts/Bubbles.cs" id="1_enrwp"]
 [ext_resource type="Texture2D" uid="uid://c844dyg2o4q4o" path="res://Assets/spikes.png" id="1_ihqkg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_87fyt"]
