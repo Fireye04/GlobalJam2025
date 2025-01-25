@@ -16,10 +16,10 @@ public partial class Player : CharacterBody2D
 	[Export]
 	public InteractionBox box;
 
-    [Export]
-    public Node2D respawnLocation;
+	[Export]
+	public Node2D respawnLocation;
 
-    private Node2D currentNpc;
+	private Node2D currentNpc;
 
 	// Differentiating exported values from used ones! 
 	// Why? if I want to change a variable mid-run I want 
@@ -40,8 +40,11 @@ public partial class Player : CharacterBody2D
 	[Export]
 	public float BubbleStrength = -1500f;
 
-	[Export]
-	public int DPS;
+    [Export]
+    public Timer timeBoi;
+
+    [Export]
+    public Sprite2D bubble;
 
 	private float Speed;
 
@@ -58,6 +61,10 @@ public partial class Player : CharacterBody2D
 	private bool doingthing = false;
 
 	public bool bubblesJump = false;
+
+    public bool bubble_on = false;
+
+    private bool cooldown = false;
 
 	public override void _UnhandledInput(InputEvent @event){
 
@@ -83,13 +90,17 @@ public partial class Player : CharacterBody2D
 			jumping = true;
 		}
 
+        if (@event.IsActionPressed("bubble") && !IsOnFloor() && timeBoi.IsStopped()) {
+            Velocity= new Vector2();
+            bubble_on = true;
+            bubble.Visible = true;
+            cooldown = true;
+            timeBoi.Start();
+		}
+
 		// what the user is inputting 
 		inputDirection = Input.GetVector("move_left", "move_right", "move_up", "move_down");
 	}
-	
-	
-	[Export]
-	public TileSet mainjjjj;
 	
 	public override void _PhysicsProcess(double delta)
 	{
@@ -101,7 +112,11 @@ public partial class Player : CharacterBody2D
 		// Add the gravity.
 		if (!IsOnFloor())
 		{
-			velocity += GetGravity() * (float)delta;
+            if (!bubble_on) {
+			    velocity += GetGravity() * (float)delta;
+            } else {
+                /*velocity.Y = 0;*/
+            }
 			acceleration = PlayerAcceleration/2;
 		} 
 
@@ -170,5 +185,14 @@ public partial class Player : CharacterBody2D
         if (body is TileMapLayer){
             this.Transform = respawnLocation.Transform;
         }
+    }
+
+    private void _on_timer_timeout() {
+        if (cooldown) {
+            timeBoi.Start(1);
+        }
+        bubble_on = false;
+        bubble.Visible = false;
+        cooldown = false;
     }
 }

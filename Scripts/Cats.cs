@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using DialogueManagerRuntime;
 
 public partial class Cats : StaticBody2D, IInteractable
 {
@@ -48,8 +49,11 @@ public partial class Cats : StaticBody2D, IInteractable
     }
 
     public void interact() {
-        GD.Print("mew");
-        anim.Play("fade_out");
+        DialogueManager.ShowExampleDialogueBalloon(dialogue, startNode);
+        DialogueManager.DialogueEnded += (Resource dialogueResource) =>
+        {
+            anim.Play("fade_out");
+        };
     }
 
     public bool canInteract() {

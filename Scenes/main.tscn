@@ -2,14 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://343s1w3o1xf5" path="res://Scenes/background.tscn" id="1_aypjt"]
 [ext_resource type="PackedScene" uid="uid://fxl55f5oss11" path="res://Scenes/Player.tscn" id="1_bjcda"]
-[ext_resource type="TileSet" uid="uid://ce1xw27p2jfew" path="res://Resources/main.tres" id="2_woisn"]
+[ext_resource type="TileSet" uid="uid://bbwoeeo5cennw" path="res://Scenes/main.tres" id="2_woisn"]
 [ext_resource type="PackedScene" uid="uid://blokf8trslvj7" path="res://Scenes/dragon.tscn" id="3_4hd21"]
 [ext_resource type="PackedScene" uid="uid://bwov3n1gx68wi" path="res://Scenes/interaction_prompt.tscn" id="4_4y5b4"]
 
 [node name="Main" type="Node2D"]
 
 [node name="background" parent="." instance=ExtResource("1_aypjt")]
-levelType = 1
+levelType = 2
 
 [node name="Player" parent="." node_paths=PackedStringArray("prompt") instance=ExtResource("1_bjcda")]
 position = Vector2(188, 81)
