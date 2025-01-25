@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://blokf8trslvj7"]
+[gd_scene load_steps=11 format=3 uid="uid://blokf8trslvj7"]
 
 [ext_resource type="Script" path="res://Scripts/Dragon.cs" id="1_6gjbh"]
+[ext_resource type="Resource" uid="uid://d17vw8ayi8nae" path="res://Resources/Dragon.dialogue" id="2_8j2yh"]
 [ext_resource type="Texture2D" uid="uid://dessri7gi670k" path="res://Assets/NPCs1.png" id="2_enjhw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vcv8f"]
@@ -27,6 +28,21 @@ animations = [{
 "name": &"default",
 "speed": 1.0
 }]
+
+[sub_resource type="Animation" id="Animation_8n8nk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_1q0qv"]
 resource_name = "fade_out"
@@ -57,21 +73,6 @@ tracks/1/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_8n8nk"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ncmou"]
 _data = {
 "RESET": SubResource("Animation_8n8nk"),
@@ -82,6 +83,8 @@ _data = {
 script = ExtResource("1_6gjbh")
 spriteAnim = NodePath("CollisionShape2D/AnimatedSprite2D")
 anim = NodePath("AnimationPlayer")
+dialogue = ExtResource("2_8j2yh")
+startNode = "start"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-4, -116)

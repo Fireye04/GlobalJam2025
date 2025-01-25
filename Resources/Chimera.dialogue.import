@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://b3okgldul35bi"
+path="res://.godot/imported/Chimera.dialogue-39d05046613db4d16308eaec0ed86dc9.tres"
+
+[deps]
+
+source_file="res://Resources/Chimera.dialogue"
+dest_files=["res://.godot/imported/Chimera.dialogue-39d05046613db4d16308eaec0ed86dc9.tres"]
+
+[params]
+
+defaults=true

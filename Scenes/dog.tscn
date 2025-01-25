@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://2f6uwsmmad2i"]
+[gd_scene load_steps=11 format=3 uid="uid://2f6uwsmmad2i"]
 
 [ext_resource type="Script" path="res://Scripts/Dog.cs" id="1_d1iud"]
+[ext_resource type="Resource" uid="uid://cpteojpuxss6v" path="res://Resources/Dog.dialogue" id="2_4x632"]
 [ext_resource type="Texture2D" uid="uid://dsqlx3a5hq73m" path="res://Assets/NPCs2.png" id="2_sru1p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vcv8f"]
@@ -82,6 +83,8 @@ _data = {
 script = ExtResource("1_d1iud")
 spriteAnim = NodePath("CollisionShape2D/AnimatedSprite2D")
 anim = NodePath("AnimationPlayer")
+dialogue = ExtResource("2_4x632")
+startNode = "start"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-16, -127)

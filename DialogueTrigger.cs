@@ -16,7 +16,7 @@ public partial class DialogueTrigger : Node2D
 		if(startWithScene) {
 			DialogueManager.ShowExampleDialogueBalloon(test, "start");
 		}
-		}
+	}
 	
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
