@@ -10,6 +10,9 @@ public partial class DialogueTrigger : Node2D
 	public bool startWithScene = false;
 	[Export]
 	public PackedScene player;
+
+	private bool hasTriggered = false;
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -25,8 +28,9 @@ public partial class DialogueTrigger : Node2D
 	}
 
 	private void _on_area_2d_body_entered(Node2D body) {
-		if(body.Name == "Player" && !startWithScene){
+		if(body.Name == "Player" && !startWithScene && !hasTriggered){
 			DialogueManager.ShowExampleDialogueBalloon(test, "start");
+			hasTriggered = true;
 		}
 
 	}
