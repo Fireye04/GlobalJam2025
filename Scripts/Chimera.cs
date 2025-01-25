@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using DialogueManagerRuntime;
 
 public partial class Chimera: StaticBody2D, IInteractable
 {
@@ -23,7 +24,7 @@ public partial class Chimera: StaticBody2D, IInteractable
     }
 
     public void interact() {
-        GD.Print("UWU");
+		/*DialogueManager.ShowExampleDialogueBalloon(test, "start");*/
         anim.Play("fade_out");
     }
 
