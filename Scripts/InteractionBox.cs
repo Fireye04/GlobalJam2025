@@ -4,51 +4,59 @@ using System.Collections.Generic;
 
 public partial class InteractionBox : Area2D
 {
-    private List<Node2D> interactablesInRange = new List<Node2D>();
 
-    private void _on_body_entered(Node2D body) {
-        if (body is IInteractable) {
-            interactablesInRange.Add(body);
+	public List<Node2D> interactablesInRange = new List<Node2D>();
 
-        }
-    }
+	private void _on_body_entered(Node2D body) {
+		if (body is IInteractable) {
+			interactablesInRange.Add(body);
+			((Player)GetParent()).in_range();
 
-    private void _on_body_exited(Node2D body) {
-        if (body is IInteractable) {
-            if (interactablesInRange.Contains(body)) {
-                interactablesInRange.Remove(body);
 
-            }
-        }
-    }
+		}
+	}
 
-    public Node2D find_nearest_interactable() {
-        if (interactablesInRange.Count == 1) {
-            return interactablesInRange[0];
+	private void _on_body_exited(Node2D body) {
+		if (body is IInteractable) {
+			if (interactablesInRange.Contains(body)) {
+				interactablesInRange.Remove(body);
+				if(interactablesInRange.Count == 0){
+					((Player)GetParent()).out_of_range();
+				}
 
-        } else if (interactablesInRange.Count > 1) {
+			}
+		}
+	}
 
-            (Node2D, float) closest = default;
+	public Node2D find_nearest_interactable() {
+		if (interactablesInRange.Count == 1) {
+			return interactablesInRange[0];
 
-            for (int i = 0; i < interactablesInRange.Count; i++) {
-                Godot.Vector2 itemPos = interactablesInRange[i].GlobalPosition;
+		} else if (interactablesInRange.Count > 1) {
 
-                float distance = GlobalPosition.DistanceTo(itemPos);
+			(Node2D, float) closest = default;
 
-                if (closest.Item1 is null) {
-                    closest = (interactablesInRange[i], distance);
-                } else {
-                    if (distance <= closest.Item2) {
-                        closest = (interactablesInRange[i], distance);
-                    }
-                }
-            }
+			for (int i = 0; i < interactablesInRange.Count; i++) {
+				Godot.Vector2 itemPos = interactablesInRange[i].GlobalPosition;
 
-            return closest.Item1;
+				float distance = GlobalPosition.DistanceTo(itemPos);
 
-        } else {
-            return null;
-        }
-    }
+				if (closest.Item1 is null) {
+					closest = (interactablesInRange[i], distance);
+				} else {
+					if (distance <= closest.Item2) {
+						closest = (interactablesInRange[i], distance);
+					}
+				}
+			}
+
+			return closest.Item1;
+
+		} else {
+			return null;
+		}
+	}
+
+	
 
 }
