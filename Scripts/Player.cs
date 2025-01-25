@@ -37,6 +37,9 @@ public partial class Player : CharacterBody2D
 	[Export]
 	public float JumpVelocity = -500.0f;
 
+	[Export]
+	public float BubbleStrength;
+
 	private float Speed;
 
 	private float acceleration;
@@ -45,15 +48,17 @@ public partial class Player : CharacterBody2D
 	
 	private bool pointingRight = true;
 
-    private bool jumping = false;
+	private bool jumping = false;
 
-    public Vector2 inputDirection;
+	public Vector2 inputDirection;
 
-    private bool doingthing = false;
+	private bool doingthing = false;
 
-    public override void _UnhandledInput(InputEvent @event){
+	public bool bubblesJump = false;
 
-        //Interaction System
+	public override void _UnhandledInput(InputEvent @event){
+
+		//Interaction System
 		if (@event.IsActionPressed("interact")) {
 			Node2D target = box.find_nearest_interactable();
 
@@ -63,7 +68,7 @@ public partial class Player : CharacterBody2D
 				if (iTarget.canInteract()) {
 
 					iTarget.interact();
-                    inputDirection = new Vector2();
+					inputDirection = new Vector2();
 					return;
 				}
 			} else {
@@ -72,12 +77,16 @@ public partial class Player : CharacterBody2D
 		}
 
 		if (@event.IsActionPressed("jump") && IsOnFloor()) {
-            jumping = true;
-        }
+			jumping = true;
+		}
 
 		// what the user is inputting 
 		inputDirection = Input.GetVector("move_left", "move_right", "move_up", "move_down");
-    }
+	}
+	
+	
+	[Export]
+	public TileSet mainjjjj;
 	
 	public override void _PhysicsProcess(double delta)
 	{
@@ -97,12 +106,16 @@ public partial class Player : CharacterBody2D
 		if (jumping)
 		{
 			velocity.Y = JumpVelocity;
-            jumping = false;
+			jumping = false;
+		}
+
+		// Handle bubble velocity
+		if(bubblesJump) {
+			velocity.Y += -1500 * (float)delta;
 		}
 
 		// Get the input direction and handle the movement/deceleration.
 
-	    GD.Print(inputDirection.X);	
 		// what is needed to compute movement
 		float direction = inputDirection.X;
 		if (direction != 0)
