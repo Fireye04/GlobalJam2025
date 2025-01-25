@@ -4,6 +4,7 @@
 [ext_resource type="TileSet" uid="uid://ce1xw27p2jfew" path="res://Scenes/main.tres" id="2_woisn"]
 [ext_resource type="PackedScene" uid="uid://blokf8trslvj7" path="res://Scenes/dragon.tscn" id="3_4hd21"]
 
+
 [node name="Main" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_bjcda")]
