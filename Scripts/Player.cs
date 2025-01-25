@@ -44,13 +44,47 @@ public partial class Player : CharacterBody2D
 	private float friction;
 	
 	private bool pointingRight = true;
+
+    private bool jumping = false;
+
+    public Vector2 inputDirection;
+
+    private bool doingthing = false;
+
+    public override void _UnhandledInput(InputEvent @event){
+
+        //Interaction System
+		if (@event.IsActionPressed("interact")) {
+			Node2D target = box.find_nearest_interactable();
+
+			if (target != null) {
+
+				IInteractable iTarget = (IInteractable)target;
+				if (iTarget.canInteract()) {
+
+					iTarget.interact();
+                    inputDirection = new Vector2();
+					return;
+				}
+			} else {
+				GD.Print("None in Range");
+			}
+		}
+
+		if (@event.IsActionPressed("jump") && IsOnFloor()) {
+            jumping = true;
+        }
+
+		// what the user is inputting 
+		inputDirection = Input.GetVector("move_left", "move_right", "move_up", "move_down");
+    }
 	
 	public override void _PhysicsProcess(double delta)
 	{
 		Speed = PlayerSpeed;
 		acceleration = PlayerAcceleration;
 		friction = PlayerFriction;
-		Vector2 velocity = Velocity;
+        Vector2 velocity = Velocity;
 
 		// Add the gravity.
 		if (!IsOnFloor())
@@ -60,18 +94,17 @@ public partial class Player : CharacterBody2D
 		} 
 
 		// Handle Jump.
-		if (Input.IsActionJustPressed("jump") && IsOnFloor())
+		if (jumping)
 		{
 			velocity.Y = JumpVelocity;
+            jumping = false;
 		}
 
 		// Get the input direction and handle the movement/deceleration.
 
-		// what the user is inputting 
-		Vector2 inputDirection = Input.GetVector("move_left", "move_right", "move_up", "move_down");
-		
+	    GD.Print(inputDirection.X);	
 		// what is needed to compute movement
-		float direction = Input.GetAxis("move_left", "move_right");
+		float direction = inputDirection.X;
 		if (direction != 0)
 		{
 			velocity.X = Mathf.MoveToward(Velocity.X, direction * Speed, acceleration);
@@ -89,25 +122,6 @@ public partial class Player : CharacterBody2D
 		MoveAndSlide();
 	}
 
-	public override void _Process(double delta) {
-		//Interaction System
-		if (Input.IsActionJustPressed("interact")) {
-			Node2D target = box.find_nearest_interactable();
-
-			if (target != null) {
-
-				IInteractable iTarget = (IInteractable)target;
-				if (iTarget.canInteract()) {
-
-					iTarget.interact();
-					return;
-				}
-			} else {
-				GD.Print("None in Range");
-			}
-		}
-
-	}
 
 	//Animation handler
 	private String GetCurrentAnim(String anim) {
