@@ -4,8 +4,6 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a0fd8"]
 
-[node name="Node2D" type="Node2D"]
-
 size = Vector2(29, 29)
 
 [node name="Node2D" type="Node2D"]

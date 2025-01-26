@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ccrcpdcl4r8yg" path="res://Scenes/Characters/chimera.tscn" id="7_suatp"]
 [ext_resource type="PackedScene" uid="uid://2f6uwsmmad2i" path="res://Scenes/Characters/dog.tscn" id="8_bf55g"]
 [ext_resource type="PackedScene" uid="uid://bwov3n1gx68wi" path="res://Scenes/Tools/interaction_prompt.tscn" id="9_di7hd"]
-[ext_resource type="PackedScene" path="res://Scenes/Tools/ChangeScene.tscn" id="10_sq2m4"]
+[ext_resource type="PackedScene" uid="uid://bynpqyaao2nw6" path="res://Scenes/Tools/ChangeScene.tscn" id="10_sq2m4"]
 [ext_resource type="PackedScene" uid="uid://c7a6td3c3d4eb" path="res://Scenes/Levels/goodLevelThree.tscn" id="11_0v4c6"]
 
 [node name="Node2D" type="Node2D"]
