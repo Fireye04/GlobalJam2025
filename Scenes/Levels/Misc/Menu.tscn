@@ -44,7 +44,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 size_flags_stretch_ratio = 0.0
-text = "Bloob"
+text = "The Memories of Bloob"
 
 [node name="PlayBtn" type="Button" parent="MenuTab/VBoxContainer"]
 layout_mode = 2
