@@ -1,8 +1,12 @@
 using Godot;
 using System;
 
-public partial class ChangeSceneOne : Node2D
+public partial class ChangeScene : Node2D
 {
+
+    [Export]
+    public PackedScene target;
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -14,11 +18,10 @@ public partial class ChangeSceneOne : Node2D
 	}
 	
 	private void _on_area_2d_body_entered(Node2D body) {
-		GD.Print("hahahaha");
 		if(body is Player) {
-			GetTree().ChangeSceneToFile("res://Scenes/goodLevelOne.tscn");
-}
-		}
+            Callable.From(() => { GetTree().ChangeSceneToPacked(target); }).CallDeferred();
+			        }
+	}
 	
 	
 }

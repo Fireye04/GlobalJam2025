@@ -2,17 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://343s1w3o1xf5" path="res://Scenes/Tools/background.tscn" id="1_aypjt"]
 [ext_resource type="PackedScene" uid="uid://fxl55f5oss11" path="res://Scenes/Characters/Player.tscn" id="1_bjcda"]
-[ext_resource type="Script" path="res://Scripts/Tools/ChangeSceneOne.cs" id="1_mp1lb"]
-[ext_resource type="PackedScene" uid="uid://bynpqyaao2nw6" path="res://Scenes/Levels/changeSceneOne.tscn" id="2_gi0ol"]
+[ext_resource type="PackedScene" uid="uid://bynpqyaao2nw6" path="res://Scenes/Tools/ChangeScene.tscn" id="2_gi0ol"]
 [ext_resource type="TileSet" uid="uid://bbwoeeo5cennw" path="res://Resources/main.tres" id="2_woisn"]
 [ext_resource type="PackedScene" uid="uid://blokf8trslvj7" path="res://Scenes/Characters/dragon.tscn" id="3_4hd21"]
 [ext_resource type="PackedScene" uid="uid://bwov3n1gx68wi" path="res://Scenes/Tools/interaction_prompt.tscn" id="4_4y5b4"]
+[ext_resource type="PackedScene" uid="uid://bgmkb7ifje4wf" path="res://Scenes/Levels/goodLevelOne.tscn" id="6_m1e1b"]
 
 [node name="Main" type="Node2D"]
-script = ExtResource("1_mp1lb")
-
-[node name="changeSceneOne" parent="." instance=ExtResource("2_gi0ol")]
-position = Vector2(822.161, 147.221)
 
 [node name="background" parent="." instance=ExtResource("1_aypjt")]
 levelType = 2
@@ -26,6 +22,10 @@ tile_set = ExtResource("2_woisn")
 
 [node name="Dragon" parent="." instance=ExtResource("3_4hd21")]
 position = Vector2(567, 175)
+
+[node name="Change Scene" parent="." instance=ExtResource("2_gi0ol")]
+position = Vector2(349, 155)
+target = ExtResource("6_m1e1b")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
