@@ -4,24 +4,26 @@
 [ext_resource type="PackedScene" uid="uid://fxl55f5oss11" path="res://Scenes/Characters/Player.tscn" id="1_bjcda"]
 [ext_resource type="PackedScene" uid="uid://bynpqyaao2nw6" path="res://Scenes/Tools/ChangeScene.tscn" id="2_gi0ol"]
 [ext_resource type="TileSet" uid="uid://bbwoeeo5cennw" path="res://Resources/main.tres" id="2_woisn"]
-[ext_resource type="PackedScene" uid="uid://blokf8trslvj7" path="res://Scenes/Characters/dragon.tscn" id="3_4hd21"]
 [ext_resource type="PackedScene" uid="uid://bwov3n1gx68wi" path="res://Scenes/Tools/interaction_prompt.tscn" id="4_4y5b4"]
 [ext_resource type="PackedScene" uid="uid://bgmkb7ifje4wf" path="res://Scenes/Levels/goodLevelOne.tscn" id="6_m1e1b"]
+[ext_resource type="PackedScene" uid="uid://ccrcpdcl4r8yg" path="res://Scenes/Characters/chimera.tscn" id="7_kxk5a"]
 
 [node name="Main" type="Node2D"]
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(68, 132)
 
 [node name="background" parent="." instance=ExtResource("1_aypjt")]
 levelType = 2
 
-[node name="Player" parent="." instance=ExtResource("1_bjcda")]
+[node name="Player" parent="." node_paths=PackedStringArray("prompt", "respawnLocation") instance=ExtResource("1_bjcda")]
 position = Vector2(188, 81)
+prompt = NodePath("../CanvasLayer/InteractionPrompt")
+respawnLocation = NodePath("../Node2D")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAABAAMAAQABAAMAAAACAAMAAQABAAMAAAADAAMAAQABAAMAAAAEAAMAAQABAAMAAAAAAAMAAQAAAAMAAAAFAAMAAQABAAMAAAAGAAMAAQABAAMAAAAHAAMAAQABAAMAAAAIAAMAAQABAAMAAAAJAAMAAQABAAMAAAAKAAMAAQABAAMAAAALAAMAAQABAAMAAAAMAAMAAQABAAMAAAANAAMAAQABAAMAAAA=")
 tile_set = ExtResource("2_woisn")
-
-[node name="Dragon" parent="." instance=ExtResource("3_4hd21")]
-position = Vector2(567, 175)
 
 [node name="Change Scene" parent="." instance=ExtResource("2_gi0ol")]
 position = Vector2(796, 147)
@@ -43,3 +45,6 @@ grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 4
 metadata/_edit_use_anchors_ = true
+
+[node name="Chimera" parent="." instance=ExtResource("7_kxk5a")]
+position = Vector2(576, 167)

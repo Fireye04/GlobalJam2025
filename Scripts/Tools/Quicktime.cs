@@ -3,6 +3,8 @@ using System;
 
 public partial class Quicktime : CanvasLayer
 {
+    [Signal]
+    public delegate void CompletedEventHandler();
 
     [Export]
     public Timer timeyBoi;
@@ -24,6 +26,8 @@ public partial class Quicktime : CanvasLayer
 
     private int currentKey = 0;
 
+    public bool succeeded = true;
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -39,8 +43,10 @@ public partial class Quicktime : CanvasLayer
 
         if (pBar.Value == 0) {
             prompt.Text = "FAIL";
+            succeeded = false;
             totalTime = 0;
             timeyBoi.Stop();
+            EmitSignal(SignalName.Completed);
             return;
         }
 
@@ -93,6 +99,9 @@ public partial class Quicktime : CanvasLayer
         startSection();
         if (totalTime == 0) {
             prompt.Text = "SUCCESS";
+            succeeded = true;
+            EmitSignal(SignalName.Completed);
+
         }
     }
     
