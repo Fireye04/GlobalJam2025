@@ -24,7 +24,7 @@ tile_set = ExtResource("2_woisn")
 position = Vector2(567, 175)
 
 [node name="Change Scene" parent="." instance=ExtResource("2_gi0ol")]
-position = Vector2(349, 155)
+position = Vector2(796, 147)
 target = ExtResource("6_m1e1b")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

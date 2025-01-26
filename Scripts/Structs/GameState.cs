@@ -6,7 +6,7 @@ public partial class GameState: Node
 {
     public static GameState Instance { get; private set; }
     //If user beats qt even once we hit the bad ending
-    public bool hasBeatQuicktime = false;	
+    public static bool hasBeatQuicktime = false;	
     
     public override void _Ready()
     {
