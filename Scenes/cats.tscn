@@ -71,8 +71,8 @@ tracks/1/keys = {
 "times": PackedFloat32Array(1),
 "transitions": PackedFloat32Array(1),
 "values": [{
-"args": [],
-"method": &"queue_free"
+"args": [0, true],
+"method": &"shape_owner_set_disabled"
 }]
 }
 
@@ -100,8 +100,8 @@ tracks/1/keys = {
 "times": PackedFloat32Array(1),
 "transitions": PackedFloat32Array(1),
 "values": [{
-"args": [],
-"method": &"queue_free"
+"args": [0, true],
+"method": &"shape_owner_set_disabled"
 }]
 }
 
