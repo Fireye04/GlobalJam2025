@@ -1,9 +1,17 @@
-[gd_scene format=3 uid="uid://npg5ug44005y"]
+[gd_scene load_steps=2 format=3 uid="uid://npg5ug44005y"]
 
-[node name="Quicktime" type="CanvasLayer"]
+[ext_resource type="Script" path="res://Scenes/Quicktime.cs" id="1_tdkeq"]
+
+[node name="Quicktime" type="CanvasLayer" node_paths=PackedStringArray("timeyBoi")]
+script = ExtResource("1_tdkeq")
+timeyBoi = NodePath("Timer")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Timer" type="Timer" parent="."]
