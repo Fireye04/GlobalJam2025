@@ -13,7 +13,7 @@ levelType = 2
 
 [node name="Player" parent="." node_paths=PackedStringArray("prompt") instance=ExtResource("1_bjcda")]
 position = Vector2(188, 81)
-prompt = NodePath("../CanvasLayer/MarginContainer/InteractionPrompt")
+prompt = NodePath("")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAABAAMAAQABAAMAAAACAAMAAQABAAMAAAADAAMAAQABAAMAAAAEAAMAAQABAAMAAAAAAAMAAQAAAAMAAAAFAAMAAQABAAMAAAAGAAMAAQABAAMAAAAHAAMAAQABAAMAAAAIAAMAAQABAAMAAAAJAAMAAQABAAMAAAAKAAMAAQABAAMAAAALAAMAAQABAAMAAAAMAAMAAQABAAMAAAANAAMAAQABAAMAAAA=")
@@ -24,18 +24,17 @@ position = Vector2(567, 175)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+[node name="InteractionPrompt" parent="CanvasLayer" instance=ExtResource("4_4y5b4")]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_top = -50.0
-offset_bottom = -50.0
+offset_left = -61.0
+offset_top = -56.615
+offset_right = 61.0
+offset_bottom = -36.615
 grow_horizontal = 2
 grow_vertical = 0
-
-[node name="InteractionPrompt" parent="CanvasLayer/MarginContainer" instance=ExtResource("4_4y5b4")]
-visible = false
-layout_mode = 2
 size_flags_horizontal = 4
+metadata/_edit_use_anchors_ = true
