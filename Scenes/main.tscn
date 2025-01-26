@@ -11,9 +11,8 @@
 [node name="background" parent="." instance=ExtResource("1_aypjt")]
 levelType = 2
 
-[node name="Player" parent="." node_paths=PackedStringArray("prompt") instance=ExtResource("1_bjcda")]
+[node name="Player" parent="." instance=ExtResource("1_bjcda")]
 position = Vector2(188, 81)
-prompt = NodePath("")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAABAAMAAQABAAMAAAACAAMAAQABAAMAAAADAAMAAQABAAMAAAAEAAMAAQABAAMAAAAAAAMAAQAAAAMAAAAFAAMAAQABAAMAAAAGAAMAAQABAAMAAAAHAAMAAQABAAMAAAAIAAMAAQABAAMAAAAJAAMAAQABAAMAAAAKAAMAAQABAAMAAAALAAMAAQABAAMAAAAMAAMAAQABAAMAAAANAAMAAQABAAMAAAA=")
