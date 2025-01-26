@@ -1,9 +1,12 @@
 using Godot;
 using System;
 using System.Threading.Tasks;
+using DialogueManagerRuntime;
 
 public partial class GameState: Node
 {
+
+    public static Player pboi;
     public static GameState Instance { get; private set; }
     //If user beats qt even once we hit the bad ending
     public static bool hasBeatQuicktime = false;	
@@ -20,6 +23,7 @@ public partial class GameState: Node
         GetTree().Root.AddChild(qt);
         await ToSignal(qt, "Completed");
         if (!qt.succeeded){
+            hasBeatQuicktime = true;
             loadLevel(whichOne);
         }
         qt.QueueFree();
@@ -34,9 +38,19 @@ public partial class GameState: Node
         } else {
             target = "res://Scenes/Levels/EndScreen.tscn";
         }
-       Callable.From(() => {GetTree().ChangeSceneToFile(target);}).CallDeferred();
-        /*var nameInputDialogue = GD.Load<PackedScene>("res://Scenes/Levels/sadLvlThree.tscn").Instantiate() as Node2D;*/
-        /*GetTree().Root.AddChild(nameInputDialogue);*/
 
+        Callable.From(() => {GetTree().ChangeSceneToFile(target);}).CallDeferred();
+
+    }
+    
+    public override void _Process(double delta){
+        DialogueManager.DialogueEnded += (Resource dialogueResource) =>
+        {
+            if (pboi.interacting){
+                InteractionBox box = pboi.GetNode<InteractionBox>("%Interaction Box");
+                box.find_nearest_interactable().GetNode<AnimationPlayer>("%AnimationPlayer").Play("fade_out");
+                pboi.interacting = false;
+            }
+        };
     }
 }

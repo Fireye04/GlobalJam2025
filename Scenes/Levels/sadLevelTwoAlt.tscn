@@ -80,7 +80,7 @@ size_flags_horizontal = 4
 metadata/_edit_use_anchors_ = true
 
 [node name="DialogueTrigger" parent="." instance=ExtResource("11_gh2la")]
-position = Vector2(2136, -355)
+position = Vector2(2242, -357)
 scale = Vector2(10, 10)
 
 [node name="DialogueTrigger2" parent="." instance=ExtResource("11_gh2la")]

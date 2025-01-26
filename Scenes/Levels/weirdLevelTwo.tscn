@@ -15,7 +15,7 @@
 [node name="weirdLevelTwo" type="Node2D"]
 
 [node name="Player" parent="." node_paths=PackedStringArray("prompt", "respawnLocation") instance=ExtResource("1_st3px")]
-position = Vector2(58, 16)
+position = Vector2(92, 3)
 prompt = NodePath("../CanvasLayer/InteractionPrompt")
 Variant = 2
 respawnLocation = NodePath("../Spawn")
@@ -28,10 +28,10 @@ tile_set = ExtResource("2_ce0lo")
 levelType = 2
 
 [node name="Spawn" type="Node2D" parent="."]
-position = Vector2(43, 13)
+position = Vector2(63, 13)
 
 [node name="Respawn" parent="." node_paths=PackedStringArray("respawnPosition") instance=ExtResource("6_1wmiy")]
-position = Vector2(1856, -312)
+position = Vector2(1816, -305)
 respawnPosition = NodePath("../Spawn")
 
 [node name="Respawn2" parent="." node_paths=PackedStringArray("respawnPosition") instance=ExtResource("6_1wmiy")]

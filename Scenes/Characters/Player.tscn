@@ -406,14 +406,14 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("anim", "box", "timeBoi", "bubble")]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("anim", "timeBoi", "bubble")]
 script = ExtResource("1_yw404")
 anim = NodePath("CollisionShape2D/AnimatedSprite2D")
-box = NodePath("Interaction Box")
 timeBoi = NodePath("Timer")
 bubble = NodePath("Sprite2D")
 
 [node name="Interaction Box" type="Area2D" parent="."]
+unique_name_in_owner = true
 script = ExtResource("3_hdg1i")
 
 [node name="interactionshape" type="CollisionShape2D" parent="Interaction Box"]
