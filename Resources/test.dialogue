@@ -9,3 +9,25 @@ Nathan: Here are some choices.
 - End the conversation => END
 Nathan: For more information see the online documentation.
 => END
+
+~ selfconvo1
+Bloob: Why can't I love them both???
+=> END
+
+~ selfconvo2
+Bloob: He doesn't see me for who I am.
+=> END
+
+~ selfconvo3
+Bloob: I want to go to Aunt Buffy's house.
+Bloob: I want to go to Aunt Buffy's house!
+Bloob: I WANT TO GO TO AUNT BUFFY'S HOUSE!
+Bloob: *You can't. She's dead.*
+=> END
+
+~ selfconvo4
+Bloob: I can't go to her anymore...
+Bloob: ...
+Bloob: But I can't stay here.
+Bloob: I need to move on from them.
+=> END

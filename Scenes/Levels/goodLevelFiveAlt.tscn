@@ -1,16 +1,17 @@
-[gd_scene load_steps=6 format=4 uid="uid://cb142dhgrhue1"]
+[gd_scene load_steps=7 format=4 uid="uid://cb142dhgrhue1"]
 
 [ext_resource type="PackedScene" uid="uid://fxl55f5oss11" path="res://Scenes/Characters/Player.tscn" id="1_vt3l8"]
 [ext_resource type="TileSet" uid="uid://bbwoeeo5cennw" path="res://Resources/main.tres" id="2_psj8b"]
 [ext_resource type="PackedScene" uid="uid://dk047a73ohmh2" path="res://Scenes/Tools/respawnNode.tscn" id="3_pcco2"]
 [ext_resource type="PackedScene" uid="uid://343s1w3o1xf5" path="res://Scenes/Tools/background.tscn" id="4_t4oi1"]
 [ext_resource type="PackedScene" uid="uid://bwov3n1gx68wi" path="res://Scenes/Tools/interaction_prompt.tscn" id="5_xf06x"]
+[ext_resource type="PackedScene" uid="uid://xtvfn68djaee" path="res://Scenes/Tools/DialogueTrigger.tscn" id="6_vmvxr"]
 
 [node name="goodLevelFiveAlt" type="Node2D"]
 position = Vector2(2, 5)
 
 [node name="Player" parent="." node_paths=PackedStringArray("prompt", "respawnLocation") instance=ExtResource("1_vt3l8")]
-position = Vector2(319, 193)
+position = Vector2(335, 189)
 prompt = NodePath("../CanvasLayer/InteractionPrompt")
 respawnLocation = NodePath("../Spawn")
 
@@ -31,3 +32,8 @@ respawnPosition = NodePath("../Spawn")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="InteractionPrompt" parent="CanvasLayer" instance=ExtResource("5_xf06x")]
+
+[node name="DialogueTrigger" parent="." instance=ExtResource("6_vmvxr")]
+position = Vector2(3769, -74)
+scale = Vector2(10, 10)
+start = "selfconvo4"
