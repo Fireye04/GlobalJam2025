@@ -14,7 +14,7 @@ public partial class GameState: Node
     }
 
     public async Task loadLevel(int whichOne){
-       Callable.From(() => {GetTree().ChangeSceneToFile("res://Scenes/Levels/sadLvlThree.tscn");}).CallDeferred();
+       Callable.From(() => {GetTree().ChangeSceneToFile("res://Scenes/Levels/sadLevelTwoAlt.tscn");}).CallDeferred();
         /*var nameInputDialogue = GD.Load<PackedScene>("res://Scenes/Levels/sadLvlThree.tscn").Instantiate() as Node2D;*/
         /*GetTree().Root.AddChild(nameInputDialogue);*/
 
