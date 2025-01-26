@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" path="res://Scenes/Quicktime.cs" id="1_tdkeq"]
 
-[node name="Quicktime" type="CanvasLayer"]
+[node name="Quicktime" type="CanvasLayer" node_paths=PackedStringArray("timeyBoi")]
 script = ExtResource("1_tdkeq")
+timeyBoi = NodePath("Timer")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
