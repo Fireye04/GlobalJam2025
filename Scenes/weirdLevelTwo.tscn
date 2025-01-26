@@ -1,18 +1,20 @@
-[gd_scene load_steps=9 format=4 uid="uid://dusc6aumd8vmx"]
+[gd_scene load_steps=10 format=4 uid="uid://dusc6aumd8vmx"]
 
 [ext_resource type="PackedScene" uid="uid://fxl55f5oss11" path="res://Scenes/Player.tscn" id="1_0mcu0"]
 [ext_resource type="TileSet" uid="uid://bbwoeeo5cennw" path="res://Scenes/main.tres" id="2_ycrw7"]
 [ext_resource type="PackedScene" uid="uid://343s1w3o1xf5" path="res://Scenes/background.tscn" id="3_bc86w"]
 [ext_resource type="PackedScene" uid="uid://blokf8trslvj7" path="res://Scenes/dragon.tscn" id="4_e11gy"]
 [ext_resource type="PackedScene" uid="uid://du5h3382ykasr" path="res://Scenes/bubbles.tscn" id="4_ra4ob"]
-[ext_resource type="PackedScene" uid="uid://dk047a73ohmh2" path="res://Scenes/respawnNode.tscn" id="6_gyvwd"]
+[ext_resource type="PackedScene" path="res://Scenes/respawnNode.tscn" id="6_gyvwd"]
 [ext_resource type="PackedScene" uid="uid://ccrcpdcl4r8yg" path="res://Scenes/chimera.tscn" id="7_osdlp"]
 [ext_resource type="PackedScene" uid="uid://2f6uwsmmad2i" path="res://Scenes/dog.tscn" id="8_ha2cy"]
+[ext_resource type="PackedScene" uid="uid://bwov3n1gx68wi" path="res://Scenes/interaction_prompt.tscn" id="9_ayuqu"]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Player" parent="." node_paths=PackedStringArray("respawnLocation") instance=ExtResource("1_0mcu0")]
+[node name="Player" parent="." node_paths=PackedStringArray("prompt", "respawnLocation") instance=ExtResource("1_0mcu0")]
 position = Vector2(75, -17)
+prompt = NodePath("../CanvasLayer/InteractionPrompt")
 Variant = 2
 respawnLocation = NodePath("../Respawn")
 
@@ -42,7 +44,24 @@ position = Vector2(1856, -312)
 respawnPosition = NodePath("../Respawn")
 
 [node name="Chimera" parent="." instance=ExtResource("7_osdlp")]
-position = Vector2(2085, -287)
+position = Vector2(2078, -290)
 
 [node name="Dog" parent="." instance=ExtResource("8_ha2cy")]
 position = Vector2(5010, -802)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="InteractionPrompt" parent="CanvasLayer" instance=ExtResource("9_ayuqu")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -61.0
+offset_top = -56.615
+offset_right = 61.0
+offset_bottom = -36.615
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+metadata/_edit_use_anchors_ = true

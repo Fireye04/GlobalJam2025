@@ -7,7 +7,10 @@ public partial class Quicktime : CanvasLayer
     [Export]
     public Timer timeyBoi;
 
-    private int spamCount = 0;
+    public int spamCount = 0;
+
+    public int spamGoal = 100;
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -30,7 +33,7 @@ public partial class Quicktime : CanvasLayer
 
 	}
 
-    public void StartQT() {
+    public void StartQT(int spamGoal) {
         spamCount = 0; 
     }
 
