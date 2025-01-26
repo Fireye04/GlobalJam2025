@@ -1,18 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://cldiaemg2op85"]
+[gd_scene load_steps=7 format=3 uid="uid://cldiaemg2op85"]
 
 [ext_resource type="Script" path="res://Scripts/Levels/Menu.cs" id="1_p3ljf"]
 [ext_resource type="Script" path="res://Scripts/Levels/MenuTab.cs" id="2_35n1r"]
 [ext_resource type="Script" path="res://Scripts/Levels/MenuSwapperButton.cs" id="3_3dy0e"]
 [ext_resource type="Script" path="res://Scripts/Tools/LoadSceneButton.cs" id="3_ikf7q"]
+[ext_resource type="PackedScene" uid="uid://343s1w3o1xf5" path="res://Scenes/Tools/background.tscn" id="3_oubgu"]
 [ext_resource type="PackedScene" uid="uid://d3erhekaiu5he" path="res://Scenes/Levels/Misc/main.tscn" id="4_7qfyq"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
-anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_right = 0.612
+anchor_bottom = 0.869
+offset_right = -71.68
+offset_bottom = -132.84
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -20,13 +22,31 @@ size_flags_vertical = 4
 script = ExtResource("1_p3ljf")
 
 [node name="MenuTab" type="MarginContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -64.0
+offset_right = 35.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("2_35n1r")
+
+[node name="background" parent="MenuTab" instance=ExtResource("3_oubgu")]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MenuTab"]
 layout_mode = 2
+
+[node name="Label" type="Label" parent="MenuTab/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+size_flags_stretch_ratio = 0.0
+text = "Bloob"
 
 [node name="PlayBtn" type="Button" parent="MenuTab/VBoxContainer"]
 layout_mode = 2
@@ -34,9 +54,9 @@ text = "Play"
 script = ExtResource("3_ikf7q")
 sceneToSwitchTo = ExtResource("4_7qfyq")
 
-[node name="SettingsBtn" type="Button" parent="MenuTab/VBoxContainer" node_paths=PackedStringArray("SwitchToMenu")]
+[node name="AboutBtn" type="Button" parent="MenuTab/VBoxContainer" node_paths=PackedStringArray("SwitchToMenu")]
 layout_mode = 2
-text = "Settings"
+text = "About"
 script = ExtResource("3_3dy0e")
 SwitchToMenu = NodePath("../../../MenuTab2")
 
@@ -46,13 +66,31 @@ text = "Quit"
 
 [node name="MenuTab2" type="MarginContainer" parent="."]
 visible = false
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.5
+offset_top = -20.0
+offset_right = 30.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("2_35n1r")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MenuTab2"]
 layout_mode = 2
+
+[node name="Label" type="Label" parent="MenuTab2/VBoxContainer"]
+layout_mode = 2
+text = "Credits:
+Kai Koehler
+Renée DeVivo
+Emma Rex
+Kiana Koehler
+Jack Newman"
 
 [node name="ReturnBtn" type="Button" parent="MenuTab2/VBoxContainer"]
 layout_mode = 2
