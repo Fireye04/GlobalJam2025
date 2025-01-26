@@ -8,13 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://bwov3n1gx68wi" path="res://Scenes/Tools/interaction_prompt.tscn" id="4_qm08v"]
 [ext_resource type="PackedScene" uid="uid://du5h3382ykasr" path="res://Scenes/Tools/bubbles.tscn" id="6_q841r"]
 [ext_resource type="PackedScene" uid="uid://bynpqyaao2nw6" path="res://Scenes/Tools/ChangeScene.tscn" id="7_c1mtn"]
-[ext_resource type="PackedScene" uid="uid://1y16muixw4qj" path="res://Scenes/Levels/weirdLevelFive.tscn" id="8_bclim"]
+[ext_resource type="PackedScene" uid="uid://b8ix1eq6ajdd3" path="res://Scenes/Levels/weirdLevelFive.tscn" id="8_bclim"]
 
 [node name="weirdLevelFour" type="Node2D"]
 
 [node name="Player" parent="." node_paths=PackedStringArray("prompt", "respawnLocation") instance=ExtResource("1_syj8x")]
 position = Vector2(332, 210)
-prompt = NodePath("../CanvasLayer/InteractionPrompt")
+prompt = NodePath("../CanvasLayer/InteractionPrompt2")
 Variant = 2
 respawnLocation = NodePath("../Spawn")
 
@@ -28,8 +28,9 @@ levelType = 2
 [node name="Spawn" type="Node2D" parent="."]
 position = Vector2(328, 229)
 
-[node name="Respawn" parent="." instance=ExtResource("4_f726p")]
+[node name="Respawn" parent="." node_paths=PackedStringArray("respawnPosition") instance=ExtResource("4_f726p")]
 position = Vector2(2130, 480)
+respawnPosition = NodePath("../Spawn")
 
 [node name="Bubbles" parent="." instance=ExtResource("6_q841r")]
 position = Vector2(3037, 624)
@@ -67,8 +68,18 @@ target = ExtResource("8_bclim")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="InteractionPrompt" parent="CanvasLayer" instance=ExtResource("4_qm08v")]
-offset_left = 331.0
-offset_top = 163.0
-offset_right = 453.0
-offset_bottom = 183.0
+[node name="InteractionPrompt2" parent="CanvasLayer" instance=ExtResource("4_qm08v")]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -61.0
+offset_top = -56.615
+offset_right = 61.0
+offset_bottom = -36.615
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+metadata/_edit_use_anchors_ = true

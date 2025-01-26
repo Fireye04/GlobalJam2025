@@ -2,6 +2,8 @@
 Circe: Oh. Hi Bloob.
 Bloob: Funny to run into you, Circe!
 Circe: You know, I saw...
+Aunt Buffy's Voice: Something's wrong! Get ready to press Z, X, or C!
+do GameState.triggerQT(1)
 Circe: ...Cooper a bit down the way. He looks... happy as always.
 => END
 

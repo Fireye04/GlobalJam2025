@@ -1,17 +1,18 @@
-[gd_scene load_steps=6 format=4 uid="uid://1y16muixw4qj"]
+[gd_scene load_steps=7 format=4 uid="uid://b8ix1eq6ajdd3"]
 
 [ext_resource type="PackedScene" uid="uid://fxl55f5oss11" path="res://Scenes/Characters/Player.tscn" id="1_hgcvj"]
 [ext_resource type="TileSet" uid="uid://bbwoeeo5cennw" path="res://Resources/main.tres" id="2_k01oj"]
 [ext_resource type="PackedScene" uid="uid://343s1w3o1xf5" path="res://Scenes/Tools/background.tscn" id="3_223t7"]
 [ext_resource type="PackedScene" uid="uid://bwov3n1gx68wi" path="res://Scenes/Tools/interaction_prompt.tscn" id="4_v8lhg"]
 [ext_resource type="PackedScene" uid="uid://blokf8trslvj7" path="res://Scenes/Characters/dragon.tscn" id="5_wxuwt"]
+[ext_resource type="PackedScene" uid="uid://xtvfn68djaee" path="res://Scenes/Tools/DialogueTrigger.tscn" id="6_a8tix"]
 
 [node name="weirdLevelFive" type="Node2D"]
 position = Vector2(2, 5)
 
 [node name="Player" parent="." node_paths=PackedStringArray("prompt", "respawnLocation") instance=ExtResource("1_hgcvj")]
 position = Vector2(319, 193)
-prompt = NodePath("../CanvasLayer/InteractionPrompt")
+prompt = NodePath("../CanvasLayer/InteractionPrompt2")
 Variant = 2
 respawnLocation = NodePath("../Spawn")
 
@@ -24,7 +25,7 @@ tile_set = ExtResource("2_k01oj")
 position = Vector2(322, 199)
 
 [node name="Dragon" parent="." instance=ExtResource("5_wxuwt")]
-position = Vector2(3558, -44)
+position = Vector2(2024, -39)
 startNode = "convo4_weirdlv5"
 
 [node name="background" parent="." instance=ExtResource("3_223t7")]
@@ -32,4 +33,23 @@ levelType = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="InteractionPrompt" parent="CanvasLayer" instance=ExtResource("4_v8lhg")]
+[node name="InteractionPrompt2" parent="CanvasLayer" instance=ExtResource("4_v8lhg")]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -61.0
+offset_top = -56.615
+offset_right = 61.0
+offset_bottom = -36.615
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="DialogueTrigger" parent="." instance=ExtResource("6_a8tix")]
+position = Vector2(2201, -93)
+scale = Vector2(5, 5)
+start = "selfconvo5"

@@ -56,6 +56,7 @@ target = ExtResource("8_y6w68")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="InteractionPrompt" parent="CanvasLayer" instance=ExtResource("6_n8s1t")]
+visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
