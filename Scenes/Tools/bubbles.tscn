@@ -35,8 +35,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Node2D2" type="Node2D"]
+[node name="Bubbles" type="Node2D" node_paths=PackedStringArray("spriteAnim")]
 script = ExtResource("1_enrwp")
+spriteAnim = NodePath("AnimatedSprite2D")
 
 [node name="Area2D" type="Area2D" parent="."]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=4 uid="uid://dusc6aumd8vmx"]
 
 [ext_resource type="PackedScene" uid="uid://fxl55f5oss11" path="res://Scenes/Characters/Player.tscn" id="1_st3px"]
-[ext_resource type="TileSet" uid="uid://ce1xw27p2jfew" path="res://Resources/main.tres" id="2_ce0lo"]
+[ext_resource type="TileSet" uid="uid://bbwoeeo5cennw" path="res://Resources/main.tres" id="2_ce0lo"]
 [ext_resource type="PackedScene" uid="uid://343s1w3o1xf5" path="res://Scenes/Tools/background.tscn" id="3_44wef"]
 [ext_resource type="PackedScene" uid="uid://blokf8trslvj7" path="res://Scenes/Characters/dragon.tscn" id="4_hhicu"]
 [ext_resource type="PackedScene" uid="uid://du5h3382ykasr" path="res://Scenes/Tools/bubbles.tscn" id="5_ryopt"]
@@ -31,14 +31,6 @@ position = Vector2(43, 13)
 [node name="Dragon" parent="." instance=ExtResource("4_hhicu")]
 position = Vector2(849, -95)
 
-[node name="bubbles" parent="." instance=ExtResource("5_ryopt")]
-position = Vector2(3804, -480)
-script = null
-
-[node name="bubbles2" parent="." instance=ExtResource("5_ryopt")]
-position = Vector2(4261, -605)
-script = null
-
 [node name="RespawnPoint" parent="." node_paths=PackedStringArray("respawnPosition") instance=ExtResource("6_1wmiy")]
 position = Vector2(1856, -312)
 respawnPosition = NodePath("../Respawn")
@@ -65,3 +57,9 @@ grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 4
 metadata/_edit_use_anchors_ = true
+
+[node name="Bubbles2" parent="." instance=ExtResource("5_ryopt")]
+position = Vector2(4063, -673)
+
+[node name="Bubbles" parent="." instance=ExtResource("5_ryopt")]
+position = Vector2(3805, -480)
