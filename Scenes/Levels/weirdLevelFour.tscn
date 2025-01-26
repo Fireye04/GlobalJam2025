@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bwov3n1gx68wi" path="res://Scenes/Tools/interaction_prompt.tscn" id="4_qm08v"]
 [ext_resource type="PackedScene" uid="uid://du5h3382ykasr" path="res://Scenes/Tools/bubbles.tscn" id="6_q841r"]
 [ext_resource type="PackedScene" uid="uid://bynpqyaao2nw6" path="res://Scenes/Tools/ChangeScene.tscn" id="7_c1mtn"]
-[ext_resource type="PackedScene" uid="uid://1y16muixw4qj" path="res://Scenes/Levels/weirdLevelFive.tscn" id="8_bclim"]
+[ext_resource type="PackedScene" uid="uid://b8ix1eq6ajdd3" path="res://Scenes/Levels/weirdLevelFive.tscn" id="8_bclim"]
 
 [node name="weirdLevelFour" type="Node2D"]
 
