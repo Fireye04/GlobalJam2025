@@ -7,6 +7,8 @@ public partial class GameState: Node
     public static GameState Instance { get; private set; }
     //If user beats qt even once we hit the bad ending
     public static bool hasBeatQuicktime = false;	
+
+    private String target;
     
     public override void _Ready()
     {
@@ -26,10 +28,10 @@ public partial class GameState: Node
 
     public async Task loadLevel(int whichOne){
         if (whichOne == 1){
-            target = "res://Scenes/Levels/sadLevelTwoAlt.tscn"
+            target = "res://Scenes/Levels/sadLevelTwoAlt.tscn";
 
         } else {
-            target = "res://Scenes/Levels/sadLevelFourAlt.tscn"
+            target = "res://Scenes/Levels/sadLevelFourAlt.tscn";
         }
        Callable.From(() => {GetTree().ChangeSceneToFile(target);}).CallDeferred();
         /*var nameInputDialogue = GD.Load<PackedScene>("res://Scenes/Levels/sadLvlThree.tscn").Instantiate() as Node2D;*/
