@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://343s1w3o1xf5"]
 
 [ext_resource type="Texture2D" uid="uid://dg1xrqvxtckf2" path="res://Assets/bad_bg.png" id="1_dafna"]
-[ext_resource type="Script" path="res://Scripts/Background.cs" id="1_yf4i6"]
+[ext_resource type="Script" path="res://Scripts/Tools/Background.cs" id="1_yf4i6"]
 [ext_resource type="Texture2D" uid="uid://2qprnxj7dd3u" path="res://Assets/good_bg.png" id="2_uhyoq"]
 [ext_resource type="Texture2D" uid="uid://3qxkh3gje7vn" path="res://Assets/weird_bg.png" id="4_0ufna"]
 

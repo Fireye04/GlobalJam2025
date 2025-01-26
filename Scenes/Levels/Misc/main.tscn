@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=4 uid="uid://d3erhekaiu5he"]
 
-[ext_resource type="PackedScene" uid="uid://343s1w3o1xf5" path="res://Scenes/background.tscn" id="1_aypjt"]
-[ext_resource type="PackedScene" uid="uid://fxl55f5oss11" path="res://Scenes/Player.tscn" id="1_bjcda"]
-[ext_resource type="Script" path="res://Scripts/ChangeSceneOne.cs" id="1_mp1lb"]
-[ext_resource type="PackedScene" uid="uid://bynpqyaao2nw6" path="res://Scenes/changeSceneOne.tscn" id="2_gi0ol"]
-[ext_resource type="TileSet" uid="uid://bbwoeeo5cennw" path="res://Scenes/main.tres" id="2_woisn"]
-[ext_resource type="PackedScene" uid="uid://blokf8trslvj7" path="res://Scenes/dragon.tscn" id="3_4hd21"]
-[ext_resource type="PackedScene" uid="uid://bwov3n1gx68wi" path="res://Scenes/interaction_prompt.tscn" id="4_4y5b4"]
+[ext_resource type="PackedScene" uid="uid://343s1w3o1xf5" path="res://Scenes/Tools/background.tscn" id="1_aypjt"]
+[ext_resource type="PackedScene" uid="uid://fxl55f5oss11" path="res://Scenes/Characters/Player.tscn" id="1_bjcda"]
+[ext_resource type="Script" path="res://Scripts/Tools/ChangeSceneOne.cs" id="1_mp1lb"]
+[ext_resource type="PackedScene" uid="uid://bynpqyaao2nw6" path="res://Scenes/Levels/changeSceneOne.tscn" id="2_gi0ol"]
+[ext_resource type="TileSet" uid="uid://bbwoeeo5cennw" path="res://Resources/main.tres" id="2_woisn"]
+[ext_resource type="PackedScene" uid="uid://blokf8trslvj7" path="res://Scenes/Characters/dragon.tscn" id="3_4hd21"]
+[ext_resource type="PackedScene" uid="uid://bwov3n1gx68wi" path="res://Scenes/Tools/interaction_prompt.tscn" id="4_4y5b4"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_mp1lb")

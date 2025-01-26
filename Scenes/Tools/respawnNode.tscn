@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dk047a73ohmh2"]
 
-[ext_resource type="Script" path="res://Scripts/RespawnNode.cs" id="1_l0ygv"]
+[ext_resource type="Script" path="res://Scripts/Tools/RespawnNode.cs" id="1_l0ygv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a0fd8"]
 

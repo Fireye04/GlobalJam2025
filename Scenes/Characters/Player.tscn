@@ -1,9 +1,9 @@
 [gd_scene load_steps=52 format=3 uid="uid://fxl55f5oss11"]
 
-[ext_resource type="Script" path="res://Scripts/Player.cs" id="1_yw404"]
+[ext_resource type="Script" path="res://Scripts/Characters/Player.cs" id="1_yw404"]
 [ext_resource type="Texture2D" uid="uid://t3lxfj2fkl7f" path="res://Assets/bad_player_move.png" id="2_ltxbr"]
 [ext_resource type="Texture2D" uid="uid://bfgbdfv2c48yn" path="res://Assets/good_player_move.png" id="2_tmncn"]
-[ext_resource type="Script" path="res://Scripts/InteractionBox.cs" id="3_hdg1i"]
+[ext_resource type="Script" path="res://Scripts/Structs/InteractionBox.cs" id="3_hdg1i"]
 [ext_resource type="Texture2D" uid="uid://dq4377r0qy4qd" path="res://Assets/weird_player_move.png" id="4_f2jr4"]
 [ext_resource type="Texture2D" uid="uid://chklnx4mns1cl" path="res://Assets/bubble.png" id="6_kvyy8"]
 

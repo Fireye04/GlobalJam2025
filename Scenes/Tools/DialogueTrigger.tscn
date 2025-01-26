@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://xtvfn68djaee"]
 
-[ext_resource type="Script" path="res://Scripts/DialogueTrigger.cs" id="1_jtpfp"]
+[ext_resource type="Script" path="res://Scripts/Tools/DialogueTrigger.cs" id="1_jtpfp"]
 [ext_resource type="Resource" uid="uid://deyomsr0dft4u" path="res://Resources/test.dialogue" id="2_tsh46"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_afjkd"]
