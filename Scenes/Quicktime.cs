@@ -11,12 +11,15 @@ public partial class Quicktime : CanvasLayer
     public ProgressBar pBar;
 
     [Export]
+    public Label countdown;
+
+    [Export]
     public Label prompt;
 
     [Export]
     public float drainSpeed = 10;
 
-    private int totalTime = 20;
+    private int totalTime = 15;
     private Random rnd = new Random();
 
     private int currentKey = 0;
@@ -24,7 +27,7 @@ public partial class Quicktime : CanvasLayer
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-        StartQT(20);
+        StartQT(15);
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
