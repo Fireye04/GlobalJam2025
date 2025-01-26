@@ -3,11 +3,13 @@
 [ext_resource type="Script" path="res://Scripts/Tools/Quicktime.cs" id="1_tdkeq"]
 [ext_resource type="Theme" uid="uid://c44cltdg463uo" path="res://Resources/THEME.tres" id="2_wh4pl"]
 
-[node name="Quicktime" type="CanvasLayer" node_paths=PackedStringArray("timeyBoi", "pBar", "prompt")]
+[node name="Quicktime" type="CanvasLayer" node_paths=PackedStringArray("timeyBoi", "t2", "pBar", "countdown", "prompt")]
 script = ExtResource("1_tdkeq")
 timeyBoi = NodePath("Timer")
+t2 = NodePath("Timer2")
 pBar = NodePath("Control/MarginContainer/VBoxContainer/ProgressBar")
-prompt = NodePath("Control/MarginContainer/VBoxContainer/HBoxContainer/Label")
+countdown = NodePath("Control/MarginContainer/VBoxContainer/Control/Countdown")
+prompt = NodePath("Control/MarginContainer/VBoxContainer/Control/Label")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -35,21 +37,44 @@ layout_mode = 2
 theme = ExtResource("2_wh4pl")
 value = 100.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer"]
+[node name="Control" type="Control" parent="Control/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
-size_flags_horizontal = 4
 
-[node name="Countdown" type="Label" parent="Control/MarginContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "10:00"
-
-[node name="Label" type="Label" parent="Control/MarginContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
+[node name="Label" type="Label" parent="Control/MarginContainer/VBoxContainer/Control"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_right = 55.0
+offset_bottom = 11.5
+grow_vertical = 2
+size_flags_horizontal = 8
+theme = ExtResource("2_wh4pl")
 text = "SPAM Z"
+
+[node name="Countdown" type="Label" parent="Control/MarginContainer/VBoxContainer/Control"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -42.0
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 0
+theme = ExtResource("2_wh4pl")
+text = "15:00"
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 0.1
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

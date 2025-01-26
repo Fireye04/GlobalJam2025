@@ -1,5 +1,15 @@
-[gd_resource type="Theme" format=3 uid="uid://c44cltdg463uo"]
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://c44cltdg463uo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_at5y3"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x3jfv"]
+bg_color = Color(5.21015e-06, 0.526791, 3.85046e-07, 1)
 
 [resource]
 default_font_size = 18
 Button/font_sizes/font_size = 14
+Label/constants/outline_size = 5
+ProgressBar/constants/outline_size = 5
+ProgressBar/styles/background = SubResource("StyleBoxFlat_at5y3")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_x3jfv")

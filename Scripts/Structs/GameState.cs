@@ -18,7 +18,6 @@ public partial class GameState: Node
     public async Task triggerQT(int whichOne){
         var qt = GD.Load<PackedScene>("res://Scenes/Tools/quicktime.tscn").Instantiate() as Quicktime;
         GetTree().Root.AddChild(qt);
-        /*qt.StartQT(15);*/
         await ToSignal(qt, "Completed");
         if (!qt.succeeded){
             loadLevel(whichOne);
