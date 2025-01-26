@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://bynpqyaao2nw6"]
 
-[ext_resource type="Script" path="res://Scripts/Tools/ChangeSceneOne.cs" id="1_5hbu4"]
+[ext_resource type="Script" path="res://Scripts/Tools/ChangeScene.cs" id="1_5hbu4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f7dgm"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Change Scene" type="Node2D"]
 script = ExtResource("1_5hbu4")
 
 [node name="Area2D" type="Area2D" parent="."]
