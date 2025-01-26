@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://blokf8trslvj7"]
 
-[ext_resource type="Script" path="res://Scripts/Dragon.cs" id="1_6gjbh"]
+[ext_resource type="Script" path="res://Scripts/Characters/Dragon.cs" id="1_6gjbh"]
 [ext_resource type="Resource" uid="uid://d17vw8ayi8nae" path="res://Resources/Dragon.dialogue" id="2_8j2yh"]
 [ext_resource type="Texture2D" uid="uid://dessri7gi670k" path="res://Assets/NPCs1.png" id="2_enjhw"]
 

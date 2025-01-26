@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://ccrcpdcl4r8yg"]
 
-[ext_resource type="Script" path="res://Scripts/Chimera.cs" id="1_6kuvv"]
+[ext_resource type="Script" path="res://Scripts/Characters/Chimera.cs" id="1_6kuvv"]
 [ext_resource type="Resource" uid="uid://b3okgldul35bi" path="res://Resources/Chimera.dialogue" id="2_03pi5"]
 [ext_resource type="Texture2D" uid="uid://dsqlx3a5hq73m" path="res://Assets/NPCs2.png" id="2_afe25"]
 

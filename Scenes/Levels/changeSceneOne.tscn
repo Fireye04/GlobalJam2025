@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bynpqyaao2nw6"]
 
-[ext_resource type="Script" path="res://Scripts/ChangeSceneOne.cs" id="1_5hbu4"]
+[ext_resource type="Script" path="res://Scripts/Tools/ChangeSceneOne.cs" id="1_5hbu4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f7dgm"]
 
