@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://bwov3n1gx68wi" path="res://Scenes/Tools/interaction_prompt.tscn" id="5_udka5"]
 [ext_resource type="PackedScene" uid="uid://du5h3382ykasr" path="res://Scenes/Tools/bubbles.tscn" id="6_w2pf2"]
 [ext_resource type="PackedScene" uid="uid://bynpqyaao2nw6" path="res://Scenes/Tools/ChangeScene.tscn" id="7_prt60"]
-[ext_resource type="PackedScene" path="res://Scenes/Levels/weirdLevelFive.tscn" id="8_ujlkx"]
-[ext_resource type="PackedScene" path="res://Scenes/Levels/goodLevelFiveAlt.tscn" id="9_8psio"]
+[ext_resource type="PackedScene" uid="uid://1y16muixw4qj" path="res://Scenes/Levels/weirdLevelFive.tscn" id="8_ujlkx"]
+[ext_resource type="PackedScene" uid="uid://xtvfn68djaee" path="res://Scenes/Tools/DialogueTrigger.tscn" id="10_0opyg"]
 
 [node name="sadLevelFourAlt" type="Node2D"]
 
@@ -38,13 +38,12 @@ position = Vector2(2916, 288)
 [node name="Cats" parent="." instance=ExtResource("4_hekrb")]
 position = Vector2(1629, 474)
 state = 2
+startNode = "convo2_badlv4"
 
 [node name="Change Scene" parent="." instance=ExtResource("7_prt60")]
 position = Vector2(4524, 120)
 scale = Vector2(20, 20)
 target = ExtResource("8_ujlkx")
-doNotUse = ExtResource("9_8psio")
-ending = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -53,3 +52,8 @@ offset_left = 331.0
 offset_top = 163.0
 offset_right = 453.0
 offset_bottom = 183.0
+
+[node name="DialogueTrigger" parent="." instance=ExtResource("10_0opyg")]
+position = Vector2(1675, 415)
+scale = Vector2(10, 10)
+start = "selfconvo3"

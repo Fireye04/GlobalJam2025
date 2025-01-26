@@ -4,6 +4,7 @@ using DialogueManagerRuntime;
 
 public partial class DialogueTrigger : Node2D
 {
+	[Export] public String start;
 	[Export]
 	public Resource test;
 	[Export]
@@ -15,7 +16,7 @@ public partial class DialogueTrigger : Node2D
 	public override void _Ready()
 	{
 		if(startWithScene) {
-			DialogueManager.ShowDialogueBalloon(test, "start");
+			DialogueManager.ShowDialogueBalloon(test, start);
 		}
 	}
 	
@@ -27,7 +28,7 @@ public partial class DialogueTrigger : Node2D
 
 	private void _on_area_2d_body_entered(Node2D body) {
 		if(body is Player && !startWithScene && !hasTriggered){
-			DialogueManager.ShowDialogueBalloon(test, "start");
+			DialogueManager.ShowDialogueBalloon(test, start);
 			Player pbody = (Player) body;
 			pbody.inputDirection = new Vector2();
 

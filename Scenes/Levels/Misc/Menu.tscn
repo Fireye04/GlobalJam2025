@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://Scripts/Levels/MenuSwapperButton.cs" id="3_3dy0e"]
 [ext_resource type="Script" path="res://Scripts/Tools/LoadSceneButton.cs" id="3_ikf7q"]
 [ext_resource type="PackedScene" uid="uid://343s1w3o1xf5" path="res://Scenes/Tools/background.tscn" id="3_oubgu"]
-[ext_resource type="PackedScene" uid="uid://d3erhekaiu5he" path="res://Scenes/Levels/Misc/main.tscn" id="4_7qfyq"]
+[ext_resource type="PackedScene" uid="uid://bgmkb7ifje4wf" path="res://Scenes/Levels/goodLevelOne.tscn" id="4_o6fs6"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -50,7 +50,7 @@ text = "Bloob"
 layout_mode = 2
 text = "Play"
 script = ExtResource("3_ikf7q")
-sceneToSwitchTo = ExtResource("4_7qfyq")
+sceneToSwitchTo = ExtResource("4_o6fs6")
 
 [node name="AboutBtn" type="Button" parent="MenuTab/VBoxContainer" node_paths=PackedStringArray("SwitchToMenu")]
 layout_mode = 2
