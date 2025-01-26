@@ -40,11 +40,11 @@ public partial class Player : CharacterBody2D
 	[Export]
 	public float BubbleStrength = -1500f;
 
-    [Export]
-    public Timer timeBoi;
+	[Export]
+	public Timer timeBoi;
 
-    [Export]
-    public Sprite2D bubble;
+	[Export]
+	public Sprite2D bubble;
 
 	private float Speed;
 
@@ -62,9 +62,9 @@ public partial class Player : CharacterBody2D
 
 	public bool bubblesJump = false;
 
-    public bool bubble_on = false;
+	public bool bubble_on = false;
 
-    private bool cooldown = false;
+	private bool cooldown = false;
 
 	public override void _UnhandledInput(InputEvent @event){
 
@@ -90,12 +90,12 @@ public partial class Player : CharacterBody2D
 			jumping = true;
 		}
 
-        if (@event.IsActionPressed("bubble") && !IsOnFloor() && timeBoi.IsStopped()) {
-            Velocity= new Vector2();
-            bubble_on = true;
-            bubble.Visible = true;
-            cooldown = true;
-            timeBoi.Start();
+		if (@event.IsActionPressed("bubble") && !IsOnFloor() && timeBoi.IsStopped()) {
+			Velocity= new Vector2();
+			bubble_on = true;
+			bubble.Visible = true;
+			cooldown = true;
+			timeBoi.Start();
 		}
 
 		// what the user is inputting 
@@ -112,11 +112,11 @@ public partial class Player : CharacterBody2D
 		// Add the gravity.
 		if (!IsOnFloor())
 		{
-            if (!bubble_on) {
-			    velocity += GetGravity() * (float)delta;
-            } else {
-                /*velocity.Y = 0;*/
-            }
+			if (!bubble_on) {
+				velocity += GetGravity() * (float)delta;
+			} else {
+				/*velocity.Y = 0;*/
+			}
 			acceleration = PlayerAcceleration/2;
 		} 
 
@@ -180,19 +180,19 @@ public partial class Player : CharacterBody2D
 		prompt.Visible = false;
 	}
 
-    
-    private void _on_area_2d_body_shape_entered(Rid body_rid, Node2D body, int body_shape_index, int local_shape_index) {
-        if (body is TileMapLayer){
-            this.Transform = respawnLocation.Transform;
-        }
-    }
+	
+	private void _on_area_2d_body_shape_entered(Rid body_rid, Node2D body, int body_shape_index, int local_shape_index) {
+		if (body is TileMapLayer){
+			this.Transform = respawnLocation.Transform;
+		}
+	}
 
-    private void _on_timer_timeout() {
-        if (cooldown) {
-            timeBoi.Start(1);
-        }
-        bubble_on = false;
-        bubble.Visible = false;
-        cooldown = false;
-    }
+	private void _on_timer_timeout() {
+		if (cooldown) {
+			timeBoi.Start(1);
+		}
+		bubble_on = false;
+		bubble.Visible = false;
+		cooldown = false;
+	}
 }
