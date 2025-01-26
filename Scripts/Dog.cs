@@ -24,7 +24,7 @@ public partial class Dog: StaticBody2D, IInteractable
     }
 
     public void interact() {
-    DialogueManager.ShowExampleDialogueBalloon(dialogue, startNode);
+    DialogueManager.ShowDialogueBalloon(dialogue, startNode);
         DialogueManager.DialogueEnded += (Resource dialogueResource) =>
         {
             anim.Play("fade_out");

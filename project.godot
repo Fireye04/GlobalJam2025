@@ -22,6 +22,7 @@ DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 [dialogue_manager]
 
 runtime/advanced/uses_dotnet=true
+runtime/balloon_path="res://addons/dialogue_manager/example_balloon/example_balloon.tscn"
 
 [display]
 
@@ -39,6 +40,13 @@ project/assembly_name="GlobalJam2025"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
+
+[gui]
+
+theme/custom_font="res://Assets/LTStudent-1.ttf"
+theme/default_font_hinting=0
+theme/default_font_multichannel_signed_distance_field=true
+theme/lcd_subpixel_layout=0
 
 [importer_defaults]
 
