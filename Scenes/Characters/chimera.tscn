@@ -95,6 +95,7 @@ sprite_frames = SubResource("SpriteFrames_pu7ab")
 frame_progress = 0.684577
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_ncmou")
 }
