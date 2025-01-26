@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://dusc6aumd8vmx"]
+[gd_scene load_steps=12 format=4 uid="uid://dusc6aumd8vmx"]
 
 [ext_resource type="PackedScene" uid="uid://fxl55f5oss11" path="res://Scenes/Characters/Player.tscn" id="1_st3px"]
 [ext_resource type="TileSet" uid="uid://bbwoeeo5cennw" path="res://Resources/main.tres" id="2_ce0lo"]
@@ -9,11 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://ccrcpdcl4r8yg" path="res://Scenes/Characters/chimera.tscn" id="7_suatp"]
 [ext_resource type="PackedScene" uid="uid://2f6uwsmmad2i" path="res://Scenes/Characters/dog.tscn" id="8_bf55g"]
 [ext_resource type="PackedScene" uid="uid://bwov3n1gx68wi" path="res://Scenes/Tools/interaction_prompt.tscn" id="9_di7hd"]
+[ext_resource type="PackedScene" path="res://Scenes/Tools/ChangeScene.tscn" id="10_sq2m4"]
+[ext_resource type="PackedScene" uid="uid://c7a6td3c3d4eb" path="res://Scenes/Levels/goodLevelThree.tscn" id="11_0v4c6"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" parent="." node_paths=PackedStringArray("prompt", "respawnLocation") instance=ExtResource("1_st3px")]
-position = Vector2(75, -17)
+position = Vector2(82, -10)
 prompt = NodePath("../CanvasLayer/InteractionPrompt")
 Variant = 2
 respawnLocation = NodePath("../Respawn")
@@ -28,18 +30,29 @@ levelType = 2
 [node name="Respawn" type="Node2D" parent="."]
 position = Vector2(43, 13)
 
-[node name="Dragon" parent="." instance=ExtResource("4_hhicu")]
-position = Vector2(849, -95)
-
 [node name="RespawnPoint" parent="." node_paths=PackedStringArray("respawnPosition") instance=ExtResource("6_1wmiy")]
 position = Vector2(1856, -312)
 respawnPosition = NodePath("../Respawn")
+
+[node name="Bubbles" parent="." instance=ExtResource("5_ryopt")]
+position = Vector2(3805, -480)
+
+[node name="Bubbles2" parent="." instance=ExtResource("5_ryopt")]
+position = Vector2(4063, -673)
+
+[node name="Dragon" parent="." instance=ExtResource("4_hhicu")]
+position = Vector2(849, -95)
 
 [node name="Chimera" parent="." instance=ExtResource("7_suatp")]
 position = Vector2(2078, -290)
 
 [node name="Dog" parent="." instance=ExtResource("8_bf55g")]
 position = Vector2(5010, -802)
+
+[node name="Change Scene" parent="." instance=ExtResource("10_sq2m4")]
+position = Vector2(5596, -992)
+scale = Vector2(20, 20)
+target = ExtResource("11_0v4c6")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -57,9 +70,3 @@ grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 4
 metadata/_edit_use_anchors_ = true
-
-[node name="Bubbles2" parent="." instance=ExtResource("5_ryopt")]
-position = Vector2(4063, -673)
-
-[node name="Bubbles" parent="." instance=ExtResource("5_ryopt")]
-position = Vector2(3805, -480)
