@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://343s1w3o1xf5" path="res://Scenes/Tools/background.tscn" id="4_ueto3"]
 [ext_resource type="PackedScene" uid="uid://blokf8trslvj7" path="res://Scenes/Characters/dragon.tscn" id="5_cc4ww"]
 [ext_resource type="PackedScene" uid="uid://bwov3n1gx68wi" path="res://Scenes/Tools/interaction_prompt.tscn" id="6_n8s1t"]
-[ext_resource type="PackedScene" path="res://Scenes/Tools/ChangeScene.tscn" id="7_mr10u"]
+[ext_resource type="PackedScene" uid="uid://bynpqyaao2nw6" path="res://Scenes/Tools/ChangeScene.tscn" id="7_mr10u"]
 [ext_resource type="PackedScene" uid="uid://dusc6aumd8vmx" path="res://Scenes/Levels/weirdLevelTwo.tscn" id="8_y6w68"]
 
 [node name="goodLevelOne" type="Node2D"]
