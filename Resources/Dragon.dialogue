@@ -1,11 +1,21 @@
-~ start
-Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
-Nathan: Here are some choices.
-- First one
-	Nathan: You picked the first one.
-- Second one
-	Nathan: You picked the second one.
-- Start again => start
-- End the conversation => END
-Nathan: For more information see the online documentation.
+~ convo1_goodlv1
+Aunt Buffy: It's nice to see you again.
+Aunt Buffy: HOW TO PLAY
+=> END
+
+~ convo2_weirdlv2
+Aunt Buffy: HOW TO PLAY
+=> END
+
+~ convo3_goodlv3
+Aunt Buffy: It's nice to see you again.
+Aunt Buffy: You know, you can come here any time you want! My home is your home.
+Aunt Buffy: I will ALWAYS be here for you Bloob.
+Bloob: Thank you, Aunt Buffy.
+=> END
+
+~ convo4_weirdlv5
+Bloob: See! Everything is fine.
+Bloob: It always was, and it always will be.
+Aunt Buffy: ...
 => END

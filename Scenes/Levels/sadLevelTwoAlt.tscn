@@ -48,9 +48,11 @@ position = Vector2(4771, -690)
 
 [node name="Chimera" parent="." instance=ExtResource("7_sjdfl")]
 position = Vector2(2078, -290)
+startNode = "convo2_badlv2"
 
 [node name="Dog" parent="." instance=ExtResource("8_bkf0l")]
 position = Vector2(5539, -810)
+startNode = "convo2_badlv2"
 
 [node name="Change Scene" parent="." instance=ExtResource("9_ff7bp")]
 position = Vector2(6613, -1003)

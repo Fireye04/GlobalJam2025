@@ -46,6 +46,7 @@ position = Vector2(3490, -220)
 
 [node name="Dragon" parent="." instance=ExtResource("5_cc4ww")]
 position = Vector2(2213, -83)
+startNode = "convo1_goodlv1"
 
 [node name="Change Scene" parent="." instance=ExtResource("7_mr10u")]
 position = Vector2(4485, -396)

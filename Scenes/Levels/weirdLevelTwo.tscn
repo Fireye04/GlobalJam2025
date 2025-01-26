@@ -45,12 +45,15 @@ position = Vector2(4063, -673)
 
 [node name="Dragon" parent="." instance=ExtResource("4_hhicu")]
 position = Vector2(849, -95)
+startNode = "convo2_weirdlv2"
 
 [node name="Chimera" parent="." instance=ExtResource("7_suatp")]
 position = Vector2(2078, -290)
+startNode = "convo1_weirdlv2"
 
 [node name="Dog" parent="." instance=ExtResource("8_bf55g")]
 position = Vector2(5010, -802)
+startNode = "convo1_weridlv2"
 
 [node name="Change Scene" parent="." instance=ExtResource("10_sq2m4")]
 position = Vector2(6084, -1010)

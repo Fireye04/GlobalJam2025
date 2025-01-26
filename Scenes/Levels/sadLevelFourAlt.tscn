@@ -35,6 +35,7 @@ position = Vector2(2916, 288)
 [node name="Cats" parent="." instance=ExtResource("4_hekrb")]
 position = Vector2(1629, 474)
 state = 2
+startNode = "convo2_weirdlv4"
 
 [node name="Change Scene" parent="." instance=ExtResource("7_prt60")]
 position = Vector2(4524, 120)
