@@ -1,11 +1,8 @@
 using Godot;
 using System;
 
-public partial class RespawnNode : Node2D
+public partial class ChangeSceneOne : Node2D
 {
-	[Export]
-	public Node2D respawnPosition;
-	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -17,8 +14,11 @@ public partial class RespawnNode : Node2D
 	}
 	
 	private void _on_area_2d_body_entered(Node2D body) {
-		if(body is Player){
-			respawnPosition.Transform = this.Transform;
-		}
+		GD.Print("hahahaha");
+		if(body is Player) {
+			GetTree().ChangeSceneToFile("res://Scenes/goodLevelOne.tscn");
 }
+		}
+	
+	
 }

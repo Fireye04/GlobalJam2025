@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://npg5ug44005y"]
 
-[ext_resource type="Script" path="res://Scenes/Quicktime.cs" id="1_tdkeq"]
+[ext_resource type="Script" path="res://Scripts/Quicktime.cs" id="1_tdkeq"]
 
 [node name="Quicktime" type="CanvasLayer" node_paths=PackedStringArray("timeyBoi")]
 script = ExtResource("1_tdkeq")
