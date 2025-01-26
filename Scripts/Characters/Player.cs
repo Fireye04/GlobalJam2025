@@ -1,5 +1,7 @@
 using Godot;
 using System;
+using System.Collections.Generic;
+using DialogueManagerRuntime;
 
 public partial class Player : CharacterBody2D
 {
@@ -66,6 +68,18 @@ public partial class Player : CharacterBody2D
 
 	private bool cooldown = false;
 
+    public bool interacting = false;
+
+    public override void _Process(double delta){
+        DialogueManager.DialogueEnded += (Resource dialogueResource) =>
+        {
+            if (interacting){
+                box.find_nearest_interactable().GetNode<AnimationPlayer>("%AnimationPlayer").Play("fade_out");
+                interacting = false;
+            }
+        };
+    }
+    
 	public override void _UnhandledInput(InputEvent @event){
 
 		//Interaction System
@@ -77,6 +91,7 @@ public partial class Player : CharacterBody2D
 				IInteractable iTarget = (IInteractable)target;
 				if (iTarget.canInteract()) {
 
+                    interacting = true;
 					iTarget.interact();
 					inputDirection = new Vector2();
 					return;
@@ -152,6 +167,11 @@ public partial class Player : CharacterBody2D
 		Velocity = velocity;
 		MoveAndSlide();
 	}
+
+    public void clearIList(){
+        box.interactablesInRange = new List<Node2D>();
+
+    }
 
 
 	//Animation handler

@@ -79,10 +79,9 @@ _data = {
 "fade_out": SubResource("Animation_1q0qv")
 }
 
-[node name="Chimera" type="StaticBody2D" node_paths=PackedStringArray("spriteAnim", "anim")]
+[node name="Chimera" type="StaticBody2D" node_paths=PackedStringArray("spriteAnim")]
 script = ExtResource("1_6kuvv")
 spriteAnim = NodePath("CollisionShape2D/AnimatedSprite2D")
-anim = NodePath("AnimationPlayer")
 dialogue = ExtResource("2_03pi5")
 startNode = "start"
 
