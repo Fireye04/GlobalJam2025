@@ -25,7 +25,7 @@ tile_set = ExtResource("2_k01oj")
 position = Vector2(322, 199)
 
 [node name="Dragon" parent="." instance=ExtResource("5_wxuwt")]
-position = Vector2(2020, -50)
+position = Vector2(2024, -39)
 startNode = "convo4_weirdlv5"
 
 [node name="background" parent="." instance=ExtResource("3_223t7")]
@@ -34,6 +34,7 @@ levelType = 2
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="InteractionPrompt2" parent="CanvasLayer" instance=ExtResource("4_v8lhg")]
+visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0

@@ -29,8 +29,9 @@ levelType = 1
 [node name="Spawn" type="Node2D" parent="."]
 position = Vector2(1386, 480)
 
-[node name="Respawn" parent="." instance=ExtResource("4_jn1je")]
+[node name="Respawn" parent="." node_paths=PackedStringArray("respawnPosition") instance=ExtResource("4_jn1je")]
 position = Vector2(2130, 480)
+respawnPosition = NodePath("../Spawn")
 
 [node name="Bubbles" parent="." instance=ExtResource("6_w2pf2")]
 position = Vector2(2916, 288)
@@ -48,6 +49,7 @@ target = ExtResource("8_ujlkx")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="InteractionPrompt2" parent="CanvasLayer" instance=ExtResource("5_udka5")]
+visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0

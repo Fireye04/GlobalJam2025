@@ -30,7 +30,7 @@ position = Vector2(237, 225)
 position = Vector2(1060, 96)
 
 [node name="Dragon" parent="." instance=ExtResource("6_4nk43")]
-position = Vector2(1752, -480)
+position = Vector2(691, 226)
 startNode = "convo3_goodlv3"
 
 [node name="Change Scene" parent="." instance=ExtResource("6_jeger")]
@@ -41,6 +41,7 @@ target = ExtResource("7_go2a3")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="InteractionPrompt2" parent="CanvasLayer" instance=ExtResource("4_vxige")]
+visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0

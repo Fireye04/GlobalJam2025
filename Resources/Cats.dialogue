@@ -1,5 +1,6 @@
 ~ convo1_weirdlv4
 Mom: Hey Bloob! I got you a...
+Aunt Buffy's Voice: It's happeing again! Get ready to press Z, X, or C!
 do GameState.triggerQT(2)
 Mom: ...bubble!
 Mom: Whoops. It pooped.
