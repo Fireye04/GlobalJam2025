@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using DialogueManagerRuntime;
 
 public partial class Dog: StaticBody2D, IInteractable
 {
@@ -23,8 +24,11 @@ public partial class Dog: StaticBody2D, IInteractable
     }
 
     public void interact() {
-        GD.Print("OWO");
-        anim.Play("fade_out");
+    DialogueManager.ShowDialogueBalloon(dialogue, startNode);
+        DialogueManager.DialogueEnded += (Resource dialogueResource) =>
+        {
+            anim.Play("fade_out");
+        };
     }
 
     public bool canInteract() {

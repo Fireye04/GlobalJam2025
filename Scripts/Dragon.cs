@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using DialogueManagerRuntime;
 
 public partial class Dragon: StaticBody2D, IInteractable
 {
@@ -23,9 +24,13 @@ public partial class Dragon: StaticBody2D, IInteractable
     }
 
     public void interact() {
-        GD.Print("fuck");
-        anim.Play("fade_out");
+		DialogueManager.ShowDialogueBalloon(dialogue, startNode);
+        DialogueManager.DialogueEnded += (Resource dialogueResource) =>
+        {
+            anim.Play("fade_out");
+        };
     }
+    
 
     public bool canInteract() {
         return Can_interact;

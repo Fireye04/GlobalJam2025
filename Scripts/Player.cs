@@ -3,23 +3,23 @@ using System;
 
 public partial class Player : CharacterBody2D
 {
-	public enum LevelType {
-		Good,
-		Bad,
-		Weird
-	}
 
 	[Export]
 	public Control prompt;
 
 	[Export]
-	public LevelType Variant = LevelType.Good;
+	public ELevelType Variant = ELevelType.Good;
 
 	[Export]
 	public AnimatedSprite2D anim;
 
 	[Export]
 	public InteractionBox box;
+
+	[Export]
+	public Node2D respawnLocation;
+
+	private Node2D currentNpc;
 
 	// Differentiating exported values from used ones! 
 	// Why? if I want to change a variable mid-run I want 
@@ -37,6 +37,15 @@ public partial class Player : CharacterBody2D
 	[Export]
 	public float JumpVelocity = -500.0f;
 
+	[Export]
+	public float BubbleStrength = -1500f;
+
+	[Export]
+	public Timer timeBoi;
+
+	[Export]
+	public Sprite2D bubble;
+
 	private float Speed;
 
 	private float acceleration;
@@ -44,6 +53,54 @@ public partial class Player : CharacterBody2D
 	private float friction;
 	
 	private bool pointingRight = true;
+
+	private bool jumping = false;
+
+	public Vector2 inputDirection;
+
+	private bool doingthing = false;
+
+	public bool bubblesJump = false;
+
+	public bool bubble_on = false;
+
+	private bool cooldown = false;
+
+	public override void _UnhandledInput(InputEvent @event){
+
+		//Interaction System
+		if (@event.IsActionPressed("interact")) {
+			Node2D target = box.find_nearest_interactable();
+
+			if (target != null) {
+
+				IInteractable iTarget = (IInteractable)target;
+				if (iTarget.canInteract()) {
+
+					iTarget.interact();
+					inputDirection = new Vector2();
+					return;
+				}
+			} else {
+				GD.Print("None in Range");
+			}
+		}
+
+		if (@event.IsActionPressed("jump") && IsOnFloor()) {
+			jumping = true;
+		}
+
+		if (@event.IsActionPressed("bubble") && !IsOnFloor() && timeBoi.IsStopped()) {
+			Velocity= new Vector2();
+			bubble_on = true;
+			bubble.Visible = true;
+			cooldown = true;
+			timeBoi.Start();
+		}
+
+		// what the user is inputting 
+		inputDirection = Input.GetVector("move_left", "move_right", "move_up", "move_down");
+	}
 	
 	public override void _PhysicsProcess(double delta)
 	{
@@ -55,23 +112,30 @@ public partial class Player : CharacterBody2D
 		// Add the gravity.
 		if (!IsOnFloor())
 		{
-			velocity += GetGravity() * (float)delta;
+			if (!bubble_on) {
+				velocity += GetGravity() * (float)delta;
+			} else {
+				/*velocity.Y = 0;*/
+			}
 			acceleration = PlayerAcceleration/2;
 		} 
 
 		// Handle Jump.
-		if (Input.IsActionJustPressed("jump") && IsOnFloor())
+		if (jumping)
 		{
 			velocity.Y = JumpVelocity;
+			jumping = false;
+		}
+
+		// Handle bubble velocity
+		if(bubblesJump) {
+			velocity.Y += BubbleStrength * (float)delta;
 		}
 
 		// Get the input direction and handle the movement/deceleration.
 
-		// what the user is inputting 
-		Vector2 inputDirection = Input.GetVector("move_left", "move_right", "move_up", "move_down");
-		
 		// what is needed to compute movement
-		float direction = Input.GetAxis("move_left", "move_right");
+		float direction = inputDirection.X;
 		if (direction != 0)
 		{
 			velocity.X = Mathf.MoveToward(Velocity.X, direction * Speed, acceleration);
@@ -89,25 +153,6 @@ public partial class Player : CharacterBody2D
 		MoveAndSlide();
 	}
 
-	public override void _Process(double delta) {
-		//Interaction System
-		if (Input.IsActionJustPressed("interact")) {
-			Node2D target = box.find_nearest_interactable();
-
-			if (target != null) {
-
-				IInteractable iTarget = (IInteractable)target;
-				if (iTarget.canInteract()) {
-
-					iTarget.interact();
-					return;
-				}
-			} else {
-				GD.Print("None in Range");
-			}
-		}
-
-	}
 
 	//Animation handler
 	private String GetCurrentAnim(String anim) {
@@ -116,9 +161,9 @@ public partial class Player : CharacterBody2D
 		String vr = "_good";
 		String lr = "_left";
 
-		if (Variant == LevelType.Bad) {
+		if (Variant == ELevelType.Bad) {
 			vr = "_bad";
-		} else if (Variant == LevelType.Weird) {
+		} else if (Variant == ELevelType.Weird) {
 			vr = "_weird";
 		}
 		if (pointingRight) {
@@ -131,8 +176,23 @@ public partial class Player : CharacterBody2D
 		prompt.Visible = true;
 	}
 
-		public void out_of_range (){
+	public void out_of_range (){
 		prompt.Visible = false;
 	}
 
+	
+	private void _on_area_2d_body_shape_entered(Rid body_rid, Node2D body, int body_shape_index, int local_shape_index) {
+		if (body is TileMapLayer){
+			this.Transform = respawnLocation.Transform;
+		}
+	}
+
+	private void _on_timer_timeout() {
+		if (cooldown) {
+			timeBoi.Start(1);
+		}
+		bubble_on = false;
+		bubble.Visible = false;
+		cooldown = false;
+	}
 }
