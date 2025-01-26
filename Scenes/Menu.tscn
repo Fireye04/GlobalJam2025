@@ -89,7 +89,7 @@ text = "Credits:
 Kai Koehler
 Renée DeVivo
 Emma Rex
-???
+Kiana K.
 Jack Newman"
 
 [node name="ReturnBtn" type="Button" parent="MenuTab2/VBoxContainer"]
