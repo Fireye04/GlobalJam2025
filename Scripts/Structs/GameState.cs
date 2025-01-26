@@ -29,8 +29,10 @@ public partial class GameState: Node
         if (whichOne == 1){
             target = "res://Scenes/Levels/sadLevelTwoAlt.tscn";
 
-        } else {
+        } else if (whichOne == 2){
             target = "res://Scenes/Levels/sadLevelFourAlt.tscn";
+        } else {
+            target = "res://Scenes/Levels/EndScreen.tscn";
         }
        Callable.From(() => {GetTree().ChangeSceneToFile(target);}).CallDeferred();
         /*var nameInputDialogue = GD.Load<PackedScene>("res://Scenes/Levels/sadLvlThree.tscn").Instantiate() as Node2D;*/

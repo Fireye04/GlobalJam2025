@@ -8,14 +8,14 @@
 [ext_resource type="PackedScene" uid="uid://bwov3n1gx68wi" path="res://Scenes/Tools/interaction_prompt.tscn" id="5_udka5"]
 [ext_resource type="PackedScene" uid="uid://du5h3382ykasr" path="res://Scenes/Tools/bubbles.tscn" id="6_w2pf2"]
 [ext_resource type="PackedScene" uid="uid://bynpqyaao2nw6" path="res://Scenes/Tools/ChangeScene.tscn" id="7_prt60"]
-[ext_resource type="PackedScene" uid="uid://1y16muixw4qj" path="res://Scenes/Levels/weirdLevelFive.tscn" id="8_ujlkx"]
+[ext_resource type="PackedScene" uid="uid://b8ix1eq6ajdd3" path="res://Scenes/Levels/weirdLevelFive.tscn" id="8_ujlkx"]
 [ext_resource type="PackedScene" uid="uid://xtvfn68djaee" path="res://Scenes/Tools/DialogueTrigger.tscn" id="10_0opyg"]
 
 [node name="sadLevelFourAlt" type="Node2D"]
 
 [node name="Player" parent="." node_paths=PackedStringArray("prompt", "respawnLocation") instance=ExtResource("1_bfn5l")]
 position = Vector2(1396, 466)
-prompt = NodePath("../CanvasLayer/InteractionPrompt")
+prompt = NodePath("../CanvasLayer/InteractionPrompt2")
 Variant = 1
 respawnLocation = NodePath("../Spawn")
 
@@ -47,13 +47,21 @@ target = ExtResource("8_ujlkx")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="InteractionPrompt" parent="CanvasLayer" instance=ExtResource("5_udka5")]
-offset_left = 331.0
-offset_top = 163.0
-offset_right = 453.0
-offset_bottom = 183.0
+[node name="InteractionPrompt2" parent="CanvasLayer" instance=ExtResource("5_udka5")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -61.0
+offset_top = -56.615
+offset_right = 61.0
+offset_bottom = -36.615
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+metadata/_edit_use_anchors_ = true
 
 [node name="DialogueTrigger" parent="." instance=ExtResource("10_0opyg")]
 position = Vector2(1675, 415)
 scale = Vector2(10, 10)
-start = "selfconvo3"

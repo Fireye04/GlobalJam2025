@@ -12,7 +12,7 @@ position = Vector2(2, 5)
 
 [node name="Player" parent="." node_paths=PackedStringArray("prompt", "respawnLocation") instance=ExtResource("1_vt3l8")]
 position = Vector2(335, 189)
-prompt = NodePath("../CanvasLayer/InteractionPrompt")
+prompt = NodePath("../CanvasLayer/InteractionPrompt2")
 respawnLocation = NodePath("../Spawn")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -31,9 +31,22 @@ respawnPosition = NodePath("../Spawn")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="InteractionPrompt" parent="CanvasLayer" instance=ExtResource("5_xf06x")]
+[node name="InteractionPrompt2" parent="CanvasLayer" instance=ExtResource("5_xf06x")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -61.0
+offset_top = -56.615
+offset_right = 61.0
+offset_bottom = -36.615
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+metadata/_edit_use_anchors_ = true
 
 [node name="DialogueTrigger" parent="." instance=ExtResource("6_vmvxr")]
-position = Vector2(3769, -74)
+position = Vector2(3061, -110)
 scale = Vector2(10, 10)
 start = "selfconvo4"

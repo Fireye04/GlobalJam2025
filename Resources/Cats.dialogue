@@ -1,5 +1,6 @@
 ~ convo1_weirdlv4
 Mom: Hey Bloob! I got you a...
+do GameState.triggerQT(2)
 Mom: ...bubble!
 Mom: Whoops. It pooped.
 Bloob: Hah! Thank you mom.
