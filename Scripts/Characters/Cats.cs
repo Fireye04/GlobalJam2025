@@ -20,10 +20,7 @@ public partial class Cats : StaticBody2D, IInteractable
 
     [Export] 
     public AnimatedSprite2D spriteAnim2;
-
-    [Export] 
-    public AnimationPlayer anim;
-
+    
     [Export]
     public Resource dialogue;
 
@@ -50,10 +47,7 @@ public partial class Cats : StaticBody2D, IInteractable
 
     public void interact() {
         DialogueManager.ShowDialogueBalloon(dialogue, startNode);
-        DialogueManager.DialogueEnded += (Resource dialogueResource) =>
-        {
-            anim.Play("fade_out");
-        };
+
     }
 
     public bool canInteract() {

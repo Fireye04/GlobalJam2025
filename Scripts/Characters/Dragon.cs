@@ -7,9 +7,6 @@ public partial class Dragon: StaticBody2D, IInteractable
     [Export] 
     public AnimatedSprite2D spriteAnim;
 
-    [Export] 
-    public AnimationPlayer anim;
-
     [Export]
     public Resource dialogue;
 
@@ -25,10 +22,6 @@ public partial class Dragon: StaticBody2D, IInteractable
 
     public void interact() {
 		DialogueManager.ShowDialogueBalloon(dialogue, startNode);
-        DialogueManager.DialogueEnded += (Resource dialogueResource) =>
-        {
-            anim.Play("fade_out");
-        };
     }
     
 

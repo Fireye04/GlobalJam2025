@@ -1,4 +1,5 @@
 ~ start
+do GameState.loadLevel(1)
 Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
 Nathan: Here are some choices.
 - First one

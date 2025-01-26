@@ -111,11 +111,11 @@ _data = {
 "fade_out": SubResource("Animation_1q0qv")
 }
 
-[node name="Cats" type="StaticBody2D" node_paths=PackedStringArray("spriteAnim1", "spriteAnim2", "anim")]
+[node name="Cats" type="StaticBody2D" node_paths=PackedStringArray("spriteAnim1", "spriteAnim2")]
 script = ExtResource("1_5oev0")
 spriteAnim1 = NodePath("Cat hitbox/Cat2")
 spriteAnim2 = NodePath("Cat hitbox/Cat1")
-anim = NodePath("AnimationPlayer")
+
 dialogue = ExtResource("2_ehac4")
 startNode = "start"
 
