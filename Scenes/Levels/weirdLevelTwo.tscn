@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" path="res://Scenes/Tools/ChangeScene.tscn" id="10_sq2m4"]
 [ext_resource type="PackedScene" uid="uid://c7a6td3c3d4eb" path="res://Scenes/Levels/goodLevelThree.tscn" id="11_0v4c6"]
 
-[node name="Node2D" type="Node2D"]
+[node name="weirdLevelTwo" type="Node2D"]
 
 [node name="Player" parent="." node_paths=PackedStringArray("prompt", "respawnLocation") instance=ExtResource("1_st3px")]
 position = Vector2(82, -10)

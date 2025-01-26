@@ -11,12 +11,12 @@
 [ext_resource type="PackedScene" path="res://Scenes/Tools/ChangeScene.tscn" id="9_ff7bp"]
 [ext_resource type="PackedScene" uid="uid://c7a6td3c3d4eb" path="res://Scenes/Levels/goodLevelThree.tscn" id="10_m7bml"]
 
-[node name="Node2D2" type="Node2D"]
+[node name="sadLevelTwoAlt" type="Node2D"]
 
 [node name="Player" parent="." node_paths=PackedStringArray("prompt", "respawnLocation") instance=ExtResource("1_70th1")]
 position = Vector2(1860, -315)
 prompt = NodePath("../CanvasLayer/InteractionPrompt")
-Variant = 2
+Variant = 1
 respawnLocation = NodePath("../Respawn")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
