@@ -1,10 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://npg5ug44005y"]
+[gd_scene load_steps=3 format=3 uid="uid://npg5ug44005y"]
 
-[ext_resource type="Script" path="res://Scripts/Quicktime.cs" id="1_tdkeq"]
+[ext_resource type="Script" path="res://Scenes/Quicktime.cs" id="1_tdkeq"]
+[ext_resource type="Theme" uid="uid://c44cltdg463uo" path="res://Resources/THEME.tres" id="2_wh4pl"]
 
-[node name="Quicktime" type="CanvasLayer" node_paths=PackedStringArray("timeyBoi")]
+[node name="Quicktime" type="CanvasLayer" node_paths=PackedStringArray("timeyBoi", "pBar", "prompt")]
 script = ExtResource("1_tdkeq")
 timeyBoi = NodePath("Timer")
+pBar = NodePath("Control/MarginContainer/VBoxContainer/ProgressBar")
+prompt = NodePath("Control/MarginContainer/VBoxContainer/HBoxContainer/Label")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -14,4 +17,39 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 71.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_wh4pl")
+value = 100.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Countdown" type="Label" parent="Control/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "10:00"
+
+[node name="Label" type="Label" parent="Control/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "SPAM Z"
+
 [node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
