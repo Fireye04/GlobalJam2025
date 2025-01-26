@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://npg5ug44005y"]
 
-[ext_resource type="Script" path="res://Scenes/Quicktime.cs" id="1_tdkeq"]
+[ext_resource type="Script" path="res://Scripts/Tools/Quicktime.cs" id="1_tdkeq"]
 [ext_resource type="Theme" uid="uid://c44cltdg463uo" path="res://Resources/THEME.tres" id="2_wh4pl"]
 
 [node name="Quicktime" type="CanvasLayer" node_paths=PackedStringArray("timeyBoi", "pBar", "prompt")]

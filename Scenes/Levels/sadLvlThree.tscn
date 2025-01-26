@@ -1,14 +1,14 @@
 [gd_scene load_steps=10 format=4 uid="uid://e2wd2d3g2bo7"]
 
-[ext_resource type="PackedScene" uid="uid://fxl55f5oss11" path="res://Scenes/Player.tscn" id="1_jwiwj"]
-[ext_resource type="TileSet" uid="uid://bbwoeeo5cennw" path="res://Scenes/main.tres" id="2_2vo2g"]
-[ext_resource type="PackedScene" uid="uid://343s1w3o1xf5" path="res://Scenes/background.tscn" id="3_r1qpj"]
-[ext_resource type="PackedScene" uid="uid://blokf8trslvj7" path="res://Scenes/dragon.tscn" id="4_ldkaq"]
-[ext_resource type="PackedScene" uid="uid://du5h3382ykasr" path="res://Scenes/bubbles.tscn" id="5_ggfao"]
-[ext_resource type="PackedScene" uid="uid://dk047a73ohmh2" path="res://Scenes/respawnNode.tscn" id="6_g1vv3"]
-[ext_resource type="PackedScene" uid="uid://ccrcpdcl4r8yg" path="res://Scenes/chimera.tscn" id="7_5oppk"]
-[ext_resource type="PackedScene" uid="uid://2f6uwsmmad2i" path="res://Scenes/dog.tscn" id="8_6mxr1"]
-[ext_resource type="PackedScene" uid="uid://bwov3n1gx68wi" path="res://Scenes/interaction_prompt.tscn" id="9_1ix33"]
+[ext_resource type="PackedScene" uid="uid://fxl55f5oss11" path="res://Scenes/Characters/Player.tscn" id="1_jwiwj"]
+[ext_resource type="TileSet" uid="uid://ce1xw27p2jfew" path="res://Resources/main.tres" id="2_2vo2g"]
+[ext_resource type="PackedScene" uid="uid://343s1w3o1xf5" path="res://Scenes/Tools/background.tscn" id="3_r1qpj"]
+[ext_resource type="PackedScene" uid="uid://blokf8trslvj7" path="res://Scenes/Characters/dragon.tscn" id="4_ldkaq"]
+[ext_resource type="PackedScene" uid="uid://du5h3382ykasr" path="res://Scenes/Tools/bubbles.tscn" id="5_ggfao"]
+[ext_resource type="PackedScene" uid="uid://dk047a73ohmh2" path="res://Scenes/Tools/respawnNode.tscn" id="6_g1vv3"]
+[ext_resource type="PackedScene" uid="uid://ccrcpdcl4r8yg" path="res://Scenes/Characters/chimera.tscn" id="7_5oppk"]
+[ext_resource type="PackedScene" uid="uid://2f6uwsmmad2i" path="res://Scenes/Characters/dog.tscn" id="8_6mxr1"]
+[ext_resource type="PackedScene" uid="uid://bwov3n1gx68wi" path="res://Scenes/Tools/interaction_prompt.tscn" id="9_1ix33"]
 
 [node name="Node2D" type="Node2D"]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://2f6uwsmmad2i"]
 
-[ext_resource type="Script" path="res://Scripts/Dog.cs" id="1_d1iud"]
+[ext_resource type="Script" path="res://Scripts/Characters/Dog.cs" id="1_d1iud"]
 [ext_resource type="Resource" uid="uid://cpteojpuxss6v" path="res://Resources/Dog.dialogue" id="2_4x632"]
 [ext_resource type="Texture2D" uid="uid://dsqlx3a5hq73m" path="res://Assets/NPCs2.png" id="2_sru1p"]
 

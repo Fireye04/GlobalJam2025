@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://cldiaemg2op85"]
 
-[ext_resource type="Script" path="res://Scripts/Menu.cs" id="1_p3ljf"]
-[ext_resource type="Script" path="res://Scripts/MenuTab.cs" id="2_35n1r"]
-[ext_resource type="Script" path="res://Scripts/MenuSwapperButton.cs" id="3_3dy0e"]
-[ext_resource type="Script" path="res://Scripts/LoadSceneButton.cs" id="3_ikf7q"]
-[ext_resource type="PackedScene" uid="uid://d3erhekaiu5he" path="res://Scenes/main.tscn" id="4_7qfyq"]
+[ext_resource type="Script" path="res://Scripts/Levels/Menu.cs" id="1_p3ljf"]
+[ext_resource type="Script" path="res://Scripts/Levels/MenuTab.cs" id="2_35n1r"]
+[ext_resource type="Script" path="res://Scripts/Levels/MenuSwapperButton.cs" id="3_3dy0e"]
+[ext_resource type="Script" path="res://Scripts/Tools/LoadSceneButton.cs" id="3_ikf7q"]
+[ext_resource type="PackedScene" uid="uid://d3erhekaiu5he" path="res://Scenes/Levels/Misc/main.tscn" id="4_7qfyq"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
