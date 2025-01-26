@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxd0ssqep3g4w"]
+
+[ext_resource type="Theme" uid="uid://c44cltdg463uo" path="res://Resources/THEME.tres" id="1_kcksu"]
+[ext_resource type="Script" path="res://Scenes/Levels/EndScreen.cs" id="1_si2t8"]
+[ext_resource type="PackedScene" uid="uid://343s1w3o1xf5" path="res://Scenes/Tools/background.tscn" id="2_my1yx"]
+
+[node name="EndScreen" type="Node2D"]
+script = ExtResource("1_si2t8")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -277.0
+offset_top = -42.0
+offset_right = 277.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_kcksu")
+theme_override_font_sizes/font_size = 40
+text = "Thank you for playing our game! <3"
+
+[node name="Button" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("1_kcksu")
+theme_override_font_sizes/font_size = 20
+text = "Back to Menu!"
+
+[node name="background" parent="." instance=ExtResource("2_my1yx")]
+levelType = 1
+
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Button" to="." method="_on_button_pressed"]

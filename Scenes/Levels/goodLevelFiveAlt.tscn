@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=4 uid="uid://cb142dhgrhue1"]
+[gd_scene load_steps=6 format=4 uid="uid://bb25lu6wyj8v6"]
 
 [ext_resource type="PackedScene" uid="uid://fxl55f5oss11" path="res://Scenes/Characters/Player.tscn" id="1_vt3l8"]
 [ext_resource type="TileSet" uid="uid://bbwoeeo5cennw" path="res://Resources/main.tres" id="2_psj8b"]
