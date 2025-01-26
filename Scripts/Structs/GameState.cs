@@ -22,8 +22,9 @@ public partial class GameState: Node
         var qt = GD.Load<PackedScene>("res://Scenes/Tools/quicktime.tscn").Instantiate() as Quicktime;
         GetTree().Root.AddChild(qt);
         await ToSignal(qt, "Completed");
-        if (!qt.succeeded){
+        if (qt.succeeded){
             hasBeatQuicktime = true;
+        } else  {
             loadLevel(whichOne);
         }
         qt.QueueFree();

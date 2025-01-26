@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://cgjt8lblnsenl"]
+[gd_scene load_steps=12 format=4 uid="uid://cgjt8lblnsenl"]
 
 [ext_resource type="PackedScene" uid="uid://fxl55f5oss11" path="res://Scenes/Characters/Player.tscn" id="1_bfn5l"]
 [ext_resource type="TileSet" uid="uid://bbwoeeo5cennw" path="res://Resources/main.tres" id="2_57i6b"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://du5h3382ykasr" path="res://Scenes/Tools/bubbles.tscn" id="6_w2pf2"]
 [ext_resource type="PackedScene" uid="uid://bynpqyaao2nw6" path="res://Scenes/Tools/ChangeScene.tscn" id="7_prt60"]
 [ext_resource type="PackedScene" uid="uid://b8ix1eq6ajdd3" path="res://Scenes/Levels/weirdLevelFive.tscn" id="8_ujlkx"]
+[ext_resource type="PackedScene" uid="uid://cb142dhgrhue1" path="res://Scenes/Levels/goodLevelFiveAlt.tscn" id="9_6nqmv"]
 [ext_resource type="PackedScene" uid="uid://xtvfn68djaee" path="res://Scenes/Tools/DialogueTrigger.tscn" id="10_0opyg"]
 
 [node name="sadLevelFourAlt" type="Node2D"]
@@ -45,6 +46,8 @@ startNode = "convo2_badlv4"
 position = Vector2(4524, 120)
 scale = Vector2(20, 20)
 target = ExtResource("8_ujlkx")
+doNotUse = ExtResource("9_6nqmv")
+ending = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -67,3 +70,4 @@ metadata/_edit_use_anchors_ = true
 [node name="DialogueTrigger" parent="." instance=ExtResource("10_0opyg")]
 position = Vector2(1675, 415)
 scale = Vector2(10, 10)
+start = "selfconvo3"
