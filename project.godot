@@ -29,6 +29,7 @@ runtime/balloon_path="res://addons/dialogue_manager/example_balloon/example_ball
 
 window/size/viewport_width=640
 window/size/viewport_height=360
+window/size/mode=3
 window/size/resizable=false
 window/size/window_width_override=1280
 window/size/window_height_override=720
