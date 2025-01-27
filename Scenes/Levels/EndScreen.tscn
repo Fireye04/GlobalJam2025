@@ -4,8 +4,9 @@
 [ext_resource type="Script" path="res://Scenes/Levels/EndScreen.cs" id="1_si2t8"]
 [ext_resource type="PackedScene" uid="uid://343s1w3o1xf5" path="res://Scenes/Tools/background.tscn" id="2_my1yx"]
 
-[node name="EndScreen" type="Node2D"]
+[node name="EndScreen" type="Node2D" node_paths=PackedStringArray("ending")]
 script = ExtResource("1_si2t8")
+ending = NodePath("CanvasLayer/Control/VBoxContainer/Label2")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

@@ -54,4 +54,5 @@ start = "selfconvo4"
 
 [node name="DialogueTrigger2" parent="." instance=ExtResource("6_vmvxr")]
 position = Vector2(134, 54)
+start = "lvl5"
 startWithScene = true
