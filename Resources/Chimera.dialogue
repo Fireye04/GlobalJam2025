@@ -1,12 +1,19 @@
-~ start
-do GameState.loadLevel(1)
-Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
-Nathan: Here are some choices.
-- First one
-	Nathan: You picked the first one.
-- Second one
-	Nathan: You picked the second one.
-- Start again => start
-- End the conversation => END
-Nathan: For more information see the online documentation.
+~ convo1_weirdlv2
+Circe: Oh. Hi Bloob.
+Bloob: Funny to run into you, Circe!
+Circe: You know, I saw...
+Aunt Buffy's Voice: Something's wrong! Get ready to press Z, X, or C!
+do GameState.triggerQT(1)
+Circe: ...Cooper a bit down the way. He looks... happy as always.
+=> END
+
+~ convo2_badlv2
+Circe: Oh. Hi Bloob.
+Bloob: Funny to run into you, Circe!
+Circe: You know, I saw that you got a boyfriend.
+Circe: Were you straight the whole time?
+Bloob: What? No! It’s not like that-
+Circe: Did you ever actually love me or were you just... “experimenting”?
+Bloob: Of course I loved you!
+Circe: Yeah, right.
 => END

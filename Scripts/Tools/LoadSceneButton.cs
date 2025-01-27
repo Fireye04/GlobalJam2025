@@ -13,7 +13,7 @@ public partial class LoadSceneButton : Button
 	private void OnSwitchSceneButtonPressed()
 	{
 		if(GetParent().GetParent() is MenuTab menuTab){
-			menuTab.LoadSceneRequest(sceneToSwitchTo);
+            Callable.From(() => { GetTree().ChangeSceneToPacked(sceneToSwitchTo); }).CallDeferred();
 		}
 	}
 }

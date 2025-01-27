@@ -7,6 +7,10 @@ public partial class InteractionBox : Area2D
 
 	public List<Node2D> interactablesInRange = new List<Node2D>();
 
+    public override void _Ready() {
+        interactablesInRange.Clear();
+    }
+
 	private void _on_body_entered(Node2D body) {
 		if (body is IInteractable) {
 			interactablesInRange.Add(body);
@@ -29,6 +33,7 @@ public partial class InteractionBox : Area2D
 	}
 
 	public Node2D find_nearest_interactable() {
+        GD.Print(interactablesInRange.Count);
 		if (interactablesInRange.Count == 1) {
 			return interactablesInRange[0];
 

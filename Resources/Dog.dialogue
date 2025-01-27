@@ -1,11 +1,13 @@
-~ start
-Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
-Nathan: Here are some choices.
-- First one
-	Nathan: You picked the first one.
-- Second one
-	Nathan: You picked the second one.
-- Start again => start
-- End the conversation => END
-Nathan: For more information see the online documentation.
+~ convo1_weirdlv2
+Cooper: What a lovely day for a picnic!
+=> END
+
+~ convo2_badlv2
+Cooper: What a lovely day for a picnic!
+Cooper: And here we are, just a guy and his girl soaking in the sun and enjoying some sandwiches.
+Cooper: (mmm... sandwiches)
+Bloob: Uhh... I'm a guy too, remember?
+Cooper: Oh-uh... yeah...
+Bloob: I mean-technically we're gay.
+Cooper: Yeah, yeah... right.
 => END

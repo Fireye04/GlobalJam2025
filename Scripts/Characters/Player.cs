@@ -1,7 +1,6 @@
 using Godot;
 using System;
 using System.Collections.Generic;
-using DialogueManagerRuntime;
 
 public partial class Player : CharacterBody2D
 {
@@ -15,7 +14,6 @@ public partial class Player : CharacterBody2D
 	[Export]
 	public AnimatedSprite2D anim;
 
-	[Export]
 	public InteractionBox box;
 
 	[Export]
@@ -70,15 +68,12 @@ public partial class Player : CharacterBody2D
 
     public bool interacting = false;
 
-    public override void _Process(double delta){
-        DialogueManager.DialogueEnded += (Resource dialogueResource) =>
-        {
-            if (interacting){
-                box.find_nearest_interactable().GetNode<AnimationPlayer>("%AnimationPlayer").Play("fade_out");
-                interacting = false;
-            }
-        };
+    public override void _Ready() {
+        GameState.pboi = this;
+        box = GetNode<InteractionBox>("%Interaction Box");
     }
+
+    
     
 	public override void _UnhandledInput(InputEvent @event){
 
@@ -168,10 +163,6 @@ public partial class Player : CharacterBody2D
 		MoveAndSlide();
 	}
 
-    public void clearIList(){
-        box.interactablesInRange = new List<Node2D>();
-
-    }
 
 
 	//Animation handler

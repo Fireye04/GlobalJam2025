@@ -7,9 +7,6 @@ public partial class Chimera: StaticBody2D, IInteractable
     [Export] 
     public AnimatedSprite2D spriteAnim;
 
-    [Export] 
-    public AnimationPlayer anim;
-
     [Export]
     public Resource dialogue;
 

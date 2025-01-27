@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://e2wd2d3g2bo7"]
+[gd_scene load_steps=12 format=4 uid="uid://e2wd2d3g2bo7"]
 
 [ext_resource type="PackedScene" uid="uid://fxl55f5oss11" path="res://Scenes/Characters/Player.tscn" id="1_70th1"]
 [ext_resource type="TileSet" uid="uid://bbwoeeo5cennw" path="res://Resources/main.tres" id="2_smqyk"]
@@ -10,12 +10,13 @@
 [ext_resource type="PackedScene" uid="uid://bwov3n1gx68wi" path="res://Scenes/Tools/interaction_prompt.tscn" id="9_6gxgu"]
 [ext_resource type="PackedScene" uid="uid://bynpqyaao2nw6" path="res://Scenes/Tools/ChangeScene.tscn" id="9_ff7bp"]
 [ext_resource type="PackedScene" uid="uid://c7a6td3c3d4eb" path="res://Scenes/Levels/goodLevelThree.tscn" id="10_m7bml"]
+[ext_resource type="PackedScene" uid="uid://xtvfn68djaee" path="res://Scenes/Tools/DialogueTrigger.tscn" id="11_gh2la"]
 
 [node name="sadLevelTwoAlt" type="Node2D"]
 
 [node name="Player" parent="." node_paths=PackedStringArray("prompt", "respawnLocation") instance=ExtResource("1_70th1")]
 position = Vector2(1860, -315)
-prompt = NodePath("../CanvasLayer/InteractionPrompt")
+prompt = NodePath("../CanvasLayer/InteractionPrompt2")
 Variant = 1
 respawnLocation = NodePath("../Spawn")
 
@@ -34,8 +35,9 @@ position = Vector2(1863, -295)
 position = Vector2(3526, -283)
 respawnPosition = NodePath("../Spawn")
 
-[node name="Respwan3" parent="." instance=ExtResource("6_l3etu")]
+[node name="Respwan3" parent="." node_paths=PackedStringArray("respawnPosition") instance=ExtResource("6_l3etu")]
 position = Vector2(5340, -796)
+respawnPosition = NodePath("../Spawn")
 
 [node name="Bubbles" parent="." instance=ExtResource("5_r3nry")]
 position = Vector2(3019, -240)
@@ -48,9 +50,11 @@ position = Vector2(4771, -690)
 
 [node name="Chimera" parent="." instance=ExtResource("7_sjdfl")]
 position = Vector2(2078, -290)
+startNode = "convo2_badlv2"
 
 [node name="Dog" parent="." instance=ExtResource("8_bkf0l")]
 position = Vector2(5539, -810)
+startNode = "convo2_badlv2"
 
 [node name="Change Scene" parent="." instance=ExtResource("9_ff7bp")]
 position = Vector2(6613, -1003)
@@ -59,7 +63,8 @@ target = ExtResource("10_m7bml")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="InteractionPrompt" parent="CanvasLayer" instance=ExtResource("9_6gxgu")]
+[node name="InteractionPrompt2" parent="CanvasLayer" instance=ExtResource("9_6gxgu")]
+visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -73,3 +78,11 @@ grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 4
 metadata/_edit_use_anchors_ = true
+
+[node name="DialogueTrigger" parent="." instance=ExtResource("11_gh2la")]
+position = Vector2(2242, -357)
+scale = Vector2(10, 10)
+
+[node name="DialogueTrigger2" parent="." instance=ExtResource("11_gh2la")]
+position = Vector2(5589, -871)
+scale = Vector2(10, 10)

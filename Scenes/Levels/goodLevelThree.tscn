@@ -13,7 +13,7 @@
 
 [node name="Player" parent="." node_paths=PackedStringArray("prompt", "respawnLocation") instance=ExtResource("1_8d2hu")]
 position = Vector2(239, 211)
-prompt = NodePath("../CanvasLayer/InteractionPrompt")
+prompt = NodePath("../CanvasLayer/InteractionPrompt2")
 respawnLocation = NodePath("../Spawn")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -30,7 +30,8 @@ position = Vector2(237, 225)
 position = Vector2(1060, 96)
 
 [node name="Dragon" parent="." instance=ExtResource("6_4nk43")]
-position = Vector2(1752, -480)
+position = Vector2(691, 226)
+startNode = "convo3_goodlv3"
 
 [node name="Change Scene" parent="." instance=ExtResource("6_jeger")]
 position = Vector2(2336, 768)
@@ -39,8 +40,18 @@ target = ExtResource("7_go2a3")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="InteractionPrompt" parent="CanvasLayer" instance=ExtResource("4_vxige")]
-offset_left = 220.0
-offset_top = 152.0
-offset_right = 342.0
-offset_bottom = 172.0
+[node name="InteractionPrompt2" parent="CanvasLayer" instance=ExtResource("4_vxige")]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -61.0
+offset_top = -56.615
+offset_right = 61.0
+offset_bottom = -36.615
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+metadata/_edit_use_anchors_ = true

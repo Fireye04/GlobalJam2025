@@ -1,11 +1,28 @@
-~ start
-Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
-Nathan: Here are some choices.
-- First one
-	Nathan: You picked the first one.
-- Second one
-	Nathan: You picked the second one.
-- Start again => start
-- End the conversation => END
-Nathan: For more information see the online documentation.
+~ convo1_weirdlv4
+Mom: Hey Bloob! I got you a...
+Aunt Buffy's Voice: It's happeing again! Get ready to press Z, X, or C!
+do GameState.triggerQT(2)
+Mom: ...bubble!
+Mom: Whoops. It popped.
+Bloob: Hah! Thank you mom.
+Dad: I just... don't see it.
+Dad: Ugh, where are my glasses?
 => END
+
+~ convo2_badlv4
+Mom: Hey Bloob! I got you a...
+Mom: ...new dress.
+Bloob: Oh-uh... thank you, Mom.
+Mom: Are you going to wear this one? You never wear the clothes I get you.
+Bloob: ...
+Mom: Oh, I see.
+Mom: Is this about the whole “I’m a boy” thing?
+Mom: I don’t know why you keep insisting on this.
+Mom: Is it some strange bid for attention? You need to cut it out (so ungrateful).
+Bloob: (It's not about attention.)
+Dad: I just.. don't see it.
+Dad: Besides the clothes and the hair..? I just don’t see it.
+Dad: Even if you actually were. Would that really make you happy?
+Dad: Would it somehow “fix” everything?
+Dad: I don't think so.
+Dad: You need to snap out of it.
