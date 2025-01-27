@@ -8,8 +8,8 @@ public partial class GameState: Node
 
     public static Player pboi;
     public static GameState Instance { get; private set; }
-    //If user beats qt even once we hit the bad ending
-    public static bool hasBeatQuicktime = false;	
+    //If user loses qt once we hit the good ending
+    public static int failCount= 0;	
 
     private String target;
     
@@ -22,11 +22,10 @@ public partial class GameState: Node
         var qt = GD.Load<PackedScene>("res://Scenes/Tools/quicktime.tscn").Instantiate() as Quicktime;
         GetTree().Root.AddChild(qt);
         await ToSignal(qt, "Completed");
-        if (qt.succeeded){
-            hasBeatQuicktime = true;
-        } else  {
+        if (!qt.succeeded){
+            failCount += 1;
             loadLevel(whichOne);
-        }
+        } 
         qt.QueueFree();
     }
 
@@ -36,6 +35,8 @@ public partial class GameState: Node
 
         } else if (whichOne == 2){
             target = "res://Scenes/Levels/sadLevelFourAlt.tscn";
+        } else if(whichOne == 3) {
+            target = "res://Scenes/Levels/goodLevelOne.tscn";
         } else {
             target = "res://Scenes/Levels/EndScreen.tscn";
         }

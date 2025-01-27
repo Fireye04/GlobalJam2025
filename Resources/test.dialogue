@@ -1,16 +1,77 @@
+~ system1
+Bloob: Here we are again.
+Bloob: The first time I remember going over to auntie's house.
+Bloob: ...
+Bloob: I miss that place.
+System: Use WASD To Move And Space To Jump.
+=> END
+to
+~ system2
+Bloob: This memory feels familiar... But not quite.
+Bloob: Like Deja-vu.
+System: Press Shift in the air to make a bubble.
+=> END
+
+~ system3
+Bloob: Auntie's house again. Home sweet home.
+System: Bubbles Rise Towards The Surface When Combined.
+=> END
+
+~ lvl1 
+Bloob: Aunt Buffy was always the best.
+=> END
+
+~ lvl2
+Bloob: That was odd. Maybe Aunt Buffy had a point about these memories...
+=> END
+
+~ lvl2_sad
+Bloob: Where... the hell am I?
+=> END
+
+~ lvl3
+Bloob: I still remember that hug as if it were yesterday.
+Bloob: She was always there for me. Without fail.
+=> END
+
+~ lvl4
+Bloob: Uh oh. Another one of these.
+Bloob: And at home. That's not a good sign.
+System: Everything Is As It Should Be
+=> END
+
+~ lvl4_self
+if GameState.failCount == 0
+	Bloob: I just can't remember what happened. 
+	Bloob: It's probably fine though, it's probably not important.
+else
+	Bloob: Ugh, why do I feel like there's something missing?
+=> END
+
+~ lvl4_sad
+Bloob: oh. oh no. 
+Bloob: I... Remember.
+Bloob: Please let me back. I want to go back.
+System: There Is No Mercy.
+=> END
+
 ~ selfconvo1
-Bloob: Why can't I love them both???
+Bloob: Why couldn't I have loved them both?
 => END
 
 ~ selfconvo2
-Bloob: He doesn't see me for who I am.
+Bloob: He didn't see the real me. 
+Bloob: Just a convenient placeholder to keep his worldview intact.
+Bloob: Why can't I just be with someone who sees me for me?!
 => END
 
 ~ selfconvo3
-Bloob: I want to go to Aunt Buffy's house.
-Bloob: I want to go to Aunt Buffy's house!
-Bloob: I NEED TO GO TO AUNT BUFFY'S HOUSE!
-Bloob: *You can't. She's dead.*
+Bloob: She's only up here now.
+=> END
+
+~ lvl5
+Bloob: Odd. I don't remember this one.
+Bloob: Maybe I'm making a new memory.
 => END
 
 ~ selfconvo4
@@ -18,11 +79,17 @@ Bloob: I can't go to her anymore...
 Bloob: ...
 Bloob: But I can't stay here.
 Bloob: I need to move on from them.
+Bloob: It's time to live my life.
+System: ALERT! Unknown Process! Shutting Down!
 do GameState.loadLevel(0)
 => END
 
 ~ selfconvo5
-Bloob: Please...
-Bloob: Stay with me...
+if GameState.failCount == 0
+	Bloob: Please...
+	Bloob: Stay with me...
+else:
+	Bloob: What did she mean by that?
+System: ALERT! Loading Next Memory!
 do GameState.loadLevel(0)
 => END

@@ -30,12 +30,27 @@ offset_right = 277.0
 offset_bottom = 42.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Label2" type="Label" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("1_kcksu")
+theme_override_font_sizes/font_size = 24
+text = "ENDING"
 
 [node name="Label" type="Label" parent="CanvasLayer/Control/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_kcksu")
 theme_override_font_sizes/font_size = 40
 text = "Thank you for playing our game! <3"
+
+[node name="Button2" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("1_kcksu")
+theme_override_font_sizes/font_size = 20
+text = "Play Again!"
 
 [node name="Button" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
 layout_mode = 2
@@ -47,4 +62,5 @@ text = "Back to Menu!"
 [node name="background" parent="." instance=ExtResource("2_my1yx")]
 levelType = 1
 
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Button" to="." method="_on_button_pressed"]

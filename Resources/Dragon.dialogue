@@ -1,32 +1,52 @@
 ~ convo1_goodlv1
-Aunt Buffy: It's nice to see you again.
-Aunt Buffy: You remember how to get around right?
-Bloob: Yes Aunt Buffy!
-Bloob: I use 'W', 'A', 'S', 'D' to move around and 'space' to jump!
-Aunt Buffy: That's correct dear. However beware on the dangers that lie ahead.
-Aunt Buffy: And when you are lost, seak to the bubbles to guide and help you.
+Aunt Buffy: It's nice to see you again, bloob!
+Bloob: It's great to see you too, auntie!
+Bloob: Your house is the best!
+Aunt Buffy: Awww, thank you! You're welcome here any time you want! My home is your home.
+Bloob: Thanks, auntie!
 => END
 
 ~ convo2_weirdlv2
-Aunt Buffy: You remember the trick I taught you right?
-Bloob: Trick?
-Aunt Buffy: Why yes dear.
-Aunt Buffy: Hold down the 'shift' button and a bubble will apear around you.
-Aunt Buffy: While in that state, you can move left and right while defying gravity.
-Aunt Buffy: Just be careful as you only have it for a moment before the bubble pops.
-Bloob: Okay Aunt Buffy, I understand!
+Bloob: What are you doing here, auntie? You weren't in this memory.
+Aunt Buffy: These ones are... different, dear. I just want you to be careful.
+Bloob: If you say so...
+Aunt Buffy: ...
+Aunt Buffy: You can't live in memories forever, Bloob.
+Bloob: Why not? I like it here.
+Aunt Buffy: You don't need to run from everything, Bloob. Life is hard, but you have to keep going.
+Bloob: Whatever. You're not even real anyway.
 => END
 
 ~ convo3_goodlv3
-Aunt Buffy: It's nice to see you again.
-Aunt Buffy: You know, you can come here any time you want! My home is your home.
-Aunt Buffy: I will ALWAYS be here for you Bloob.
-Bloob: Thank you, Aunt Buffy.
-Aunt Buffy: Oh and before I forget, try using your ability in the bubbles! It might suprise you!
+Aunt Buffy: Well then you should leave him!
+Bloob: He's a nice guy though!
+Aunt Buffy: Bah! There are so many nice guys out there. Get a guy who's nice AND respects you for who you are.
+Bloob: ... Ugh, you have a point.
+Aunt Buffy: Of course I do. I've seen my fair share of "nice guys". You're worth an amazing guy. Don't settle.
+Bloob: I think I agree. Thanks auntie. 
+Aunt Buffy: Anytime. C'mere.
+=> END
+
+~ convo_weirdlv4
+Bloob: I want to go to your house.
+Bloob: I want to go to your house!
+Bloob: I NEED TO GO TO YOUR HOUSE!
+Aunt Buffy: ...
+Bloob: I can't anymore. 
+Bloob: You're dead.
 => END
 
 ~ convo4_weirdlv5
 Bloob: See! Everything is fine.
 Bloob: It always was, and it always will be.
-Aunt Buffy: ...
+if GameState.failCount == 0
+	Aunt Buffy: ...
+	Bloob: Tell me everything will be fine, auntie.
+	Aunt Buffy: ...
+	Bloob: TELL ME EVERYTHING'S GONNA BE FINE PLEASE
+else
+	Bloob: Right, auntie?
+	Aunt Buffy: Oh, you poor dear...
+	Bloob: What do you mean?
+	Aunt Buffy: ...
 => END

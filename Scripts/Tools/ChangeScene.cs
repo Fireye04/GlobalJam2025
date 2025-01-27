@@ -25,7 +25,7 @@ public partial class ChangeScene : Node2D
 	
 	private void _on_area_2d_body_entered(Node2D body) {
 		if(body is Player) {
-            if (ending && !GameState.hasBeatQuicktime){
+            if (ending && GameState.failCount > 0){
                 target = doNotUse;
             }
             Callable.From(() => { GetTree().ChangeSceneToPacked(target); }).CallDeferred();

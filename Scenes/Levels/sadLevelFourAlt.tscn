@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://cgjt8lblnsenl"]
+[gd_scene load_steps=13 format=4 uid="uid://cgjt8lblnsenl"]
 
 [ext_resource type="PackedScene" uid="uid://fxl55f5oss11" path="res://Scenes/Characters/Player.tscn" id="1_bfn5l"]
 [ext_resource type="TileSet" uid="uid://bbwoeeo5cennw" path="res://Resources/main.tres" id="2_57i6b"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b8ix1eq6ajdd3" path="res://Scenes/Levels/weirdLevelFive.tscn" id="8_ujlkx"]
 [ext_resource type="PackedScene" uid="uid://cb142dhgrhue1" path="res://Scenes/Levels/goodLevelFiveAlt.tscn" id="9_6nqmv"]
 [ext_resource type="PackedScene" uid="uid://xtvfn68djaee" path="res://Scenes/Tools/DialogueTrigger.tscn" id="10_0opyg"]
+[ext_resource type="PackedScene" uid="uid://blokf8trslvj7" path="res://Scenes/Characters/dragon.tscn" id="12_7mo7d"]
 
 [node name="sadLevelFourAlt" type="Node2D"]
 
@@ -67,7 +68,15 @@ grow_vertical = 0
 size_flags_horizontal = 4
 metadata/_edit_use_anchors_ = true
 
-[node name="DialogueTrigger" parent="." instance=ExtResource("10_0opyg")]
-position = Vector2(1675, 415)
-scale = Vector2(10, 10)
+[node name="Dragon" parent="." instance=ExtResource("12_7mo7d")]
+position = Vector2(3901, 158)
+startNode = "convo_weirdlv4"
+
+[node name="DialogueTrigger2" parent="." instance=ExtResource("10_0opyg")]
+position = Vector2(4099, 131)
 start = "selfconvo3"
+
+[node name="DialogueTrigger3" parent="." instance=ExtResource("10_0opyg")]
+position = Vector2(843, 124)
+start = "lvl4_sad"
+startWithScene = true

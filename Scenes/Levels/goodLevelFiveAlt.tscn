@@ -51,3 +51,7 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(3061, -110)
 scale = Vector2(10, 10)
 start = "selfconvo4"
+
+[node name="DialogueTrigger2" parent="." instance=ExtResource("6_vmvxr")]
+position = Vector2(134, 54)
+startWithScene = true

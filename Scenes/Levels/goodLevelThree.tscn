@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://c7a6td3c3d4eb"]
+[gd_scene load_steps=10 format=4 uid="uid://c7a6td3c3d4eb"]
 
 [ext_resource type="PackedScene" uid="uid://fxl55f5oss11" path="res://Scenes/Characters/Player.tscn" id="1_8d2hu"]
 [ext_resource type="PackedScene" uid="uid://343s1w3o1xf5" path="res://Scenes/Tools/background.tscn" id="2_822br"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://blokf8trslvj7" path="res://Scenes/Characters/dragon.tscn" id="6_4nk43"]
 [ext_resource type="PackedScene" uid="uid://bynpqyaao2nw6" path="res://Scenes/Tools/ChangeScene.tscn" id="6_jeger"]
 [ext_resource type="PackedScene" uid="uid://cdlmiw8u1p3e6" path="res://Scenes/Levels/weirdLevelFour.tscn" id="7_go2a3"]
+[ext_resource type="PackedScene" uid="uid://xtvfn68djaee" path="res://Scenes/Tools/DialogueTrigger.tscn" id="9_8sh77"]
 
 [node name="goodLevelThree" type="Node2D"]
 
@@ -55,3 +56,12 @@ grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 4
 metadata/_edit_use_anchors_ = true
+
+[node name="DialogueTrigger" parent="." instance=ExtResource("9_8sh77")]
+position = Vector2(845, 138)
+start = "lvl3"
+
+[node name="DialogueTrigger2" parent="." instance=ExtResource("9_8sh77")]
+position = Vector2(-36, 213)
+start = "system3"
+startWithScene = true
